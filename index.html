@@ -1,39 +1,41 @@
-    <!doctype html>
-    <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body >
+    <link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+</head>
+  <body class="font-[lato]">
+
+
+    <div
+      class=" grid grid-rows-6 w-full h-screen gap-2 lg:grid lg:grid-cols-10 lg:grid-rows-1 " >
+
+      <div
+        class="grid grid-cols-[repeat(13,1fr)] grid-rows-3    row-span-2 bg-[url(/img/plan.jpg)] bg-contain mt-0     bg-no-repeat lg:bg-center lg:col-span-8 lg:order-2 " >
+    
         
-    <div class="grid grid-rows-6  w-full h-screen gap-2 lg:grid lg:grid-cols-10 lg:grid-rows-1 lg:gap-0 lg:order ">
-        
-                <div class="h-screen row-span-2 bg-[url(/img/plan.jpg)] bg-contain bg-no-repeat lg:bg-center lg:col-span-8  lg:order-2">
-        
-                    <div class="grid grid-cols-6 h- w-full"></div>
+        <div class="bg-yellow-400 border border-2 border-blue-600 col-span-5 row-span-1">salle de conference</div>
+        <div class="bg-red-400 border border-2 border-red-600 col-span-5 row-start-2 row-end-4 ">reciption</div>
+        <div class="bg-black border border-2  border-green-200 col-start-8 col-end-11">salle de serveures</div>
+        <div class="bg-blue-700 border border-2 border-yellow-300 col-span-3">salle de securite</div>
+        <div class="bg-green-100 border border-2 border-red-400 row-start-3 col-start-8 col-end-11">salle du personnes</div>
+        <div class="border border-2 border-cyan-100 bg-cyan-400 col-span-3 col-start-11 row-start-3">salle d'archives</div>
+      </div>
 
-                    <div class="bg-black/20 col-start-1 col-end-3"></div>
+      <div
+        class="row-span-4 bg-orange-300 flex flex-col text-center justify-start gap-2 lg:col-span-2 lg:order-1 lg:flex lg:items-center lg:gap-10"
+      >
+        <h4>unassigned worker</h4>
 
-
-                </div>
-        
-                <div class="row-span-4 bg-black/30  flex flex-col text-center justify-start gap-2 lg:col-span-2 lg:order-1">
-                    <H4>unassigned worker </H4>
-
-                    <button class="">add new worker</button>
-
-                    <div class="workerList">
-
-                    </div>
-            
-            </div>
-         </div>
-
-
-
-       
-   
-    </body>
-    </html>
+        <button class="border border-2 w-40 rounded-xl">add new worker</button>
+        <div id="listsection " class="border border-black-2 h-"></div>
+      </div>
+    </div>
+  </body>
+</html>
