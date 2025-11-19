@@ -5,37 +5,154 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </head>
 
-</head>
   <body class="font-[lato]">
+      
+          
+<div id="form" class=" flex justify-center items-center w-full h-screen  backdrop-blur-sm fixed ">
 
+<form class="flex flex-col h-[95%] justify-around items-center relative gap-4 p-4 w-80 border-2 border-orange-800 rounded-lg bg-orange-400 text-white overflow-y-scroll">
+<i id="closeX"class="fa-solid fa-xmark absolute top-7 right-8 h-10"></i>
 
-    <div
-      class=" grid grid-rows-6 w-full h-screen gap-2 lg:grid lg:grid-cols-10 lg:grid-rows-1 " >
+<h1 class="font-semibold bg-orange-300 w-30 h-20 p-2 border-2 border-orange-200 rounded-md">employe information</h1>
 
-      <div
-        class="grid grid-cols-[repeat(13,1fr)] grid-rows-3    row-span-2 bg-[url(/img/plan.jpg)] bg-contain mt-0     bg-no-repeat lg:bg-center lg:col-span-8 lg:order-2 " >
-    
-        
-        <div class="bg-yellow-400 border border-2 border-blue-600 col-span-5 row-span-1">salle de conference</div>
-        <div class="bg-red-400 border border-2 border-red-600 col-span-5 row-start-2 row-end-4 ">reciption</div>
-        <div class="bg-black border border-2  border-green-200 col-start-8 col-end-11">salle de serveures</div>
-        <div class="bg-blue-700 border border-2 border-yellow-300 col-span-3">salle de securite</div>
-        <div class="bg-green-100 border border-2 border-red-400 row-start-3 col-start-8 col-end-11">salle du personnes</div>
-        <div class="border border-2 border-cyan-100 bg-cyan-400 col-span-3 col-start-11 row-start-3">salle d'archives</div>
-      </div>
-
-      <div
-        class="row-span-4 bg-orange-300 flex flex-col text-center justify-start gap-2 lg:col-span-2 lg:order-1 lg:flex lg:items-center lg:gap-10"
-      >
-        <h4>unassigned worker</h4>
-
-        <button class="border border-2 w-40 rounded-xl">add new worker</button>
-        <div id="listsection " class="border border-black-2 h-"></div>
-      </div>
+    <div class="w-full ">
+      <label for="name" class="font-semibold">Name:</label><br />
+      <input type="text" id="name" placeholder="full name" class="border-2 rounded-md w-full p-2 border-orange-200 bg-[#F3E9DC]" />
     </div>
+
+    <div class="w-full">
+      <label for="role" class="font-semibold">Role:</label><br />
+      <select id="role" class="border-2 rounded-md w-full p-2 border-orange-200 text-black bg-[#F3E9DC]">
+        <option selected disabled > select role</option>
+        <option>Receptionist</option>
+        <option>IT Technician</option>
+        <option>Security Agent</option>
+        <option>Manager</option>
+        <option>Cleaning Staff</option>
+      </select>
+    </div>
+
+    <div class="w-full">
+      <label for="url" class="font-semibold">URL Photo:</label><br />
+      <input id="url" type="url" placeholder="URl file" class=" border-2 rounded-md w-full p-2 border-orange-200 text-black bg-[#F3E9DC]" />
+      <img class="w-20 h-20 border-2 mt-2 rounded-md border-dashed border-orange-200 " src="" alt="" />
+    </div>
+
+    <div class="w-full">
+      <label for="email" class="font-semibold">Email Address:</label><br />
+      <input id="email" type="email" placeholder="email address" class="  border-2 rounded-md w-full p-2 border-orange-200 text-black bg-[#F3E9DC]" />
+    </div>
+
+    <div class="w-full">
+      <label for="phone" class="font-semibold">Phone Number:</label><br />
+      <input id="phone" type="tel" placeholder="phone number"  class="rounded-md w-full p-2 border-2  border-orange-200 text-black bg-[#F3E9DC]" />
+    </div>
+
+    <div class="experience w-full">
+
+        <div class="flex flex-cols w-full fonts-black">
+            
+        </div>
+        <div class="flex flex-col gap-4 justify-around  border border-2 border-orange-200 rounded-lg w-[100%] p-2 mt-2 gap-8">
+            <div class="flex gap-4">
+                
+                <div class="flex flex-col w-[48%] text-center justify-center font-semibold ">
+                    
+                    <label for="company">comapny name:</label>
+                    <input id="company"type="text"  class=" border-2 rounded-md w-[full] p-2 m-0 border-orange-200 text-black bg-[#F3E9DC]">
+                    
+                </div>
+                <div class="flex flex-col w-[48%] text-center justify-center font-semibold ">
+                    <label for="jop">job title:</label>
+                    <input id="job" type="text" class="border-2 rounded-md w-[full] p-2 border-orange-200 text-black bg-[#F3E9DC]" >
+                    
+                </div>
+            </div>
+            
+            <div class="flex gap-4 ">
+                
+                <div class="flex flex-col w-[48%] text-center justify-center border-2 rounded ">
+                    <label class="font-semibold" for="startDate ">Started in :</label>
+                    <input id="startDate"  class="text-gray-400 " type="date" >
+                    
+                </div>      
+                <div class="flex flex-col w-[48%] text-center justify-center border-2 rounded   ">
+                    <label class="font-semibold" for="endDate">ended in :</label>
+                    <input id="endDate" class="text-gray-400 " type="date" >
+                    
+                </div>
+            </div>
+            <button class="font-semibold border-2 border-black  rounded-md w-full p-0  h-10 border-orange-400  bg-[#77BEF0] hover:bg-black ">
+            add experience
+        </button>
+    
+</div>
+    </div>
+
+    <div class="flex justify-between gap-7">
+      <button class="border-2 border-orange-400 bg-black rounded-md h-10 w-20 font-semibold hover:bg-[#77BEF0]">Submit</button>
+      <button class="border-2 border-orange-400 hover:bg-[#77BEF0] rounded-md h-10 w-20 font-semibold bg-black">Cancel</button>
+    </div>
+
+  </form>
+</div>
+ 
+      
+      <main class="">
+        <div
+          class="grid grid-rows-6 w-full h-screen gap-2 lg:grid lg:grid-cols-10 lg:grid-rows-1"
+        >
+          <div
+            class="grid grid-cols-[repeat(13,1fr)] grid-rows-3 row-span-2 bg-[url(/img/plan.jpg)] bg-contain mt-0 bg-no-repeat lg:bg-center lg:col-span-8 lg:order-2"
+          >
+            <div
+              class="bg-yellow-400 border border-2 border-blue-600 col-span-5 row-span-1"
+            >
+              salle de conference
+            </div>
+            <div
+              class="bg-red-400 border border-2 border-red-600 col-span-5 row-start-2 row-end-4"
+            >
+              reciption
+            </div>
+            <div
+              class="bg-black border border-2 border-green-200 col-start-8 col-end-11"
+            >
+              salle de serveures
+            </div>
+            <div class="bg-blue-700 border border-2 border-yellow-300 col-span-3">
+              salle de securite
+            </div>
+            <div
+              class="bg-green-100 border border-2 border-red-400 row-start-3 col-start-8 col-end-11"
+            >
+              salle du personnes
+            </div>
+            <div
+              class="border border-2 border-cyan-100 bg-cyan-400 col-span-3 col-start-11 row-start-3"
+            >
+              salle d'archives
+            </div>
+          </div>
+    
+          <div
+            class="row-span-4 bg-orange-300 flex flex-col text-center justify-start gap-2 lg:col-span-2 lg:order-1 lg:flex lg:items-center lg:gap-10"
+          >
+            <h4>unassigned worker</h4>
+    
+            <button class="border border-2 w-40 rounded-xl">add new worker</button>
+            <div id="listsection " class="border border-black-2 h-"></div>
+          </div>
+        </div>
+    </main>
   </body>
 </html>
