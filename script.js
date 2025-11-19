@@ -17,4 +17,19 @@ formulaire.classList.add("hidden");
 
 });
 
-let cancel = document.getElementById("cancel")
+let canceled = document.getElementById("cancel")
+
+cancel.addEventListener("click", () => {
+
+
+formulaire.classList.add("hidden");
+
+});
+
+document.addEventListener("keydown",(e)=> {
+        if(e.key=="Escape")
+            {
+    formulaire.classList.add("hidden");
+         }
+    })
+
