@@ -17,10 +17,10 @@
   <body class="font-[lato]">
       
           
-<div id="form" class=" flex justify-center items-center w-full h-screen  backdrop-blur-sm fixed ">
+<div id="form" class="flex justify-center  items-center w-full h-screen  backdrop-blur-sm fixed hidden">
 
 <form class="flex flex-col h-[95%] justify-around items-center relative gap-4 p-4 w-80 border-2 border-orange-800 rounded-lg bg-orange-400 text-white overflow-y-scroll">
-<i id="closeX"class="fa-solid fa-xmark absolute top-7 right-8 h-10"></i>
+<i id="close"class="fa-solid fa-xmark absolute top-3   h-5 right-4 hover:cursor-pointer hover:text-black   "></i>
 
 <h1 class="font-semibold bg-orange-300 w-30 h-20 p-2 border-2 border-orange-200 rounded-md">employe information</h1>
 
@@ -99,8 +99,8 @@
     </div>
 
     <div class="flex justify-between gap-7">
-      <button class="border-2 border-orange-400 bg-black rounded-md h-10 w-20 font-semibold hover:bg-[#77BEF0]">Submit</button>
-      <button class="border-2 border-orange-400 hover:bg-[#77BEF0] rounded-md h-10 w-20 font-semibold bg-black">Cancel</button>
+      <button type=""class="border-2 border-orange-400 bg-black rounded-md h-10 w-20 font-semibold hover:bg-[#77BEF0]">Submit</button>
+      <button id="cancel"class="border-2 border-orange-400 hover:bg-[#77BEF0] rounded-md h-10 w-20 font-semibold bg-black">Cancel</button>
     </div>
 
   </form>
@@ -148,11 +148,12 @@
             class="row-span-4 bg-orange-300 flex flex-col text-center justify-start gap-2 lg:col-span-2 lg:order-1 lg:flex lg:items-center lg:gap-10"
           >
             <h4>unassigned worker</h4>
-    
-            <button class="border border-2 w-40 rounded-xl">add new worker</button>
+          
+            <button id="addNewWorker" class="border border-2 w-40 rounded-xl border">add new worker</button>
             <div id="listsection " class="border border-black-2 h-"></div>
           </div>
         </div>
     </main>
+    <script src="/script.js"></script>
   </body>
 </html>
