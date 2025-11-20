@@ -18,7 +18,9 @@ let experienceForms= document.getElementById("experienceForms")
 
 let allworkerData=[]
 
-let worker
+let worker;
+
+let workers = []
 
 
 
@@ -155,57 +157,77 @@ function validation(value,regex)
 {
   return regex.test(value.trim())
 }
+
+let exptest = [];
+
 document.addEventListener("click",(e)=>{
+  document.addEventListener("click",(e)=>{
   if(e.target.id == "submiting"){
     e.preventDefault();
-    let username =document.getElementById("name");
+
+    let username = document.getElementById("name");
     let email = document.getElementById("email");
     let phone = document.getElementById("phone");
+    let role = document.getElementById("role");
 
-    let nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/
-    let emailRegex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-    let phoneRegex=/^(?:\+212|0)(6|7)[0-9]{8}$/
+    let nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+    let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    let phoneRegex = /^(?:\+212|0)(6|7)[0-9]{8}$/;
 
-    let validName = validation(username.value,nameRegex);
-    let validEmail = validation(email.value,emailRegex);
-    let validPhone = validation(phone.value,phoneRegex);
+    if (!validation(username.value, nameRegex)) return username.focus();
+    if (!validation(email.value, emailRegex))   return email.focus();
+    if (!validation(phone.value, phoneRegex))   return phone.focus();
 
-      if (!validName) {
+   
+    let experiencesList = [];
 
-        username.focus();
+    let allExp = document.querySelectorAll(".expForm");
 
-        return null;
-    }
-    if(!validEmail)
-      {
-        email.focus();
+    allExp.forEach(exp => {
 
+      let company = exp.querySelector(".company");
+      let job = exp.querySelector(".job");
+      let startDate = exp.querySelector(".startDate");
+      let endDate = exp.querySelector(".endDate");
+
+      let companyRegex = /^[A-Za-z0-9&.,'’\- ]{2,50}$/;
+      let jobRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+
+      
+      if (!companyRegex.test(company.value.trim())) {
+        company.focus();
+        return;
       }
-      if(!validPhone)
-        {
-          phone.focus();
 
-        }
+      if (!jobRegex.test(job.value.trim())) {
+        job.focus();
+        return;
+      }
 
-      let allexperience = document.querySelectorAll(".expForm")
+      let expObj = {
+        company: company.value.trim(),
+        job: job.value.trim(),
+        start: startDate.value,
+        end: endDate.value
+      };
 
-      allexperience.forEach((exp,i)=>
-      {
-        let company=exp.querySelector(".company")
-      console.log(company);
-        
-        let job =exp.querySelector(".job")
+      experiencesList.push(expObj);
+    });
 
-        let startDate=exp.queryselector(".starteDate")
+    console.log("EXPERIENCES:", experiencesList);
 
-        let enddate=exp.querySelector(".endDate")
+    // Build employee object
+    const employee = {
+      name: username.value.trim(),
+      email: email.value.trim(),
+      phone: phone.value.trim(),
+      role: role.value,
+      experiences: experiencesList
+    };
 
-
-
-      })
+    console.log("EMPLOYEE:", employee);
   }
-
-})
+});
 
 
 // // let submitButton = document.getElementById("submiting") 
