@@ -20,7 +20,114 @@ let allworkerData = [];
 
 let worker;
 
-let workers = [];
+let workers = [
+  {
+    name: "Sarah Johnson",
+    email: "sarah.johnson@example.com",
+    phone: "0612345678",
+    role: "Receptionist",
+    image: "/img/user1.png",
+    experiences: [
+      { company: "Hotel Atlas", job: "Front Desk", start: "2021-02", end: "2023-01" }
+    ],
+    status: "unassigned",
+  },
+  {
+    name: "Ahmed El Fassi",
+    email: "ahmed.fassi@example.com",
+    phone: "0654321876",
+    role: "Security Agent",
+    image: "/img/user2.png",
+    experiences: [
+      { company: "Maroc Telecom", job: "Tech Support", start: "2020-01", end: "2022-08" }
+    ],
+    status: "unassigned",
+  },
+  {
+    name: "Lisa Wong",
+    email: "lisa.wong@example.com",
+    phone: "0678123490",
+    role: "Security Agent",
+    image: "/img/user3.png",
+    experiences: [
+      { company: "AXA", job: "Security Staff", start: "2019-05", end: "2021-12" }
+    ],
+    status: "unassigned",
+  },
+  {
+    name: "Mohamed Idrissi",
+    email: "mohamed.idrissi@example.com",
+    phone: "0623458790",
+    role: "Manager",
+    image: "/img/user4.png",
+    experiences: [
+      { company: "Decathlon", job: "Store Manager", start: "2020-04", end: "2023-10" }
+    ],
+    status: "unassigned",
+  },
+  {
+    name: "Emily Carter",
+    email: "emily.carter@example.com",
+    phone: "0611122233",
+    role: "Cleaning Staff",
+    image: "/img/user5.png",
+    experiences: [
+      { company: "Clinique Agdal", job: "Cleaning Assistant", start: "2022-01", end: "2023-05" }
+    ],
+    status: "unassigned",
+  },
+  {
+    name: "Youssef Benali",
+    email: "youssef.benali@example.com",
+    phone: "0699988877",
+    role: "Receptionist",
+    image: "/img/user6.png",
+    experiences: [],
+    status: "unassigned",
+  },
+  {
+    name: "Maria Gonzalez",
+    email: "maria.gonzalez@example.com",
+    phone: "0687654433",
+    role: "IT Technician",
+    image: "/img/user7.png",
+    experiences: [
+      { company: "HP", job: "Junior Technician", start: "2021-06", end: "2022-11" }
+    ],
+    status: "unassigned",
+  },
+  {
+    name: "Hassan Oubaha",
+    email: "hassan.oubaha@example.com",
+    phone: "0655234478",
+    role: "Security Agent",
+    image: "/img/user8.png",
+    experiences: [
+      { company: "Carrefour", job: "Security Guard", start: "2020-02", end: "2023-01" }
+    ],
+    status: "unassigned",
+  },
+  {
+    name: "Julia Smith",
+    email: "julia.smith@example.com",
+    phone: "0677001122",
+    role: "Manager",
+    image: "/img/user9.png",
+    experiences: [],
+    status: "unassigned",
+  },
+  {
+    name: "Omar Chafi",
+    email: "omar.chafi@example.com",
+    phone: "0612349900",
+    role: "Cleaning Staff",
+    image: "/img/user10.png",
+    experiences: [
+      { company: "Riad Yamna", job: "Cleaner", start: "2019-10", end: "2022-03" }
+    ],
+    status: "unassigned",
+  },
+];
 
 closingButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -239,14 +346,38 @@ function addWorkerList(workers) {
   });
 }
 
+addWorkerList(workers)
+
 
 let addBtns = document.querySelectorAll(".addButton")
 
 addBtns.forEach(btn => {
   btn.addEventListener("click", ()=>{
-    let id = btn.parentElement.id
-    let limit = btn.parentElement.dataset.limit
+    let room = btn.parentElement.id;
+    let limit = btn.parentElement.dataset.limit;
+    let availableWorkers = filterWorkers(room);
+    let modal = document.getElementById("availableWorkers");
+    modal.classList.remove("hidden");
+    
   })
 })
- 
+
+
+function filterWorkers(room){
+  let filtred = []
+  if(room === "conference"){
+    filtred = workers.filter(w => w.status === "unassigned")
+  }else if (room === "reciption"){
+    filtred = workers.filter(w => (w.role === "Receptionist" || w.role === "Manager" || w.role === "Cleaning Staff" ) && w.status === "unassigned")
+  }else if (room === "serveurs"){
+    filtred = workers.filter(w => (w.role === "IT Technician" || w.role === "Manager" || w.role === "Cleaning Staff" ) && w.status === "unassigned")
+  }else if (room === "security"){
+    filtred = workers.filter(w => (w.role === "Security Agent" || w.role === "Manager" || w.role === "Cleaning Staff" ) && w.status === "unassigned")
+  }else if (room === "pesonnes"){
+    filtred = workers.filter(w => w.status === "unassigned")
+  }else if (room === "archifs"){
+    filtred = workers.filter(w => w.role === "Manager" && w.status === "unassigned")
+  }
+  return filtred
+}
 

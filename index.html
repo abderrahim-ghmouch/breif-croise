@@ -191,6 +191,31 @@
         </form>
       </div>
 
+      <div
+        id="availableWorkers"
+        class="flex justify-center items-center w-full h-screen backdrop-blur-sm fixed z-[10] hidden"
+      >
+        <div
+        id="formulaire"
+          class="flex flex-col h-[95%] justify-around items-center relative gap-4 p-4 w-80 border-2 border-orange-800 rounded-lg bg-orange-400 text-white overflow-y-scroll"
+        >
+          <i
+            id="close"
+            class="fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
+          ></i>
+
+          <h1
+            class="font-semibold bg-orange-300 w-30 h-20 p-2 border-2 border-orange-200 rounded-md"
+          >
+            Available Workers
+          </h1>
+
+          <div class="worker-list">
+
+          </div>
+        </div>
+      </div>
+
       <main class="">
         <div
           class="grid grid-rows-6 w-full h-screen gap-1 lg:grid lg:grid-cols-10 lg:grid-rows-1"
@@ -219,8 +244,9 @@
             </div>
             <div id="security" data-limit="2" class="relative border border-2 border-yellow-300 col-span-3">
               salle de securite
+              <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
             </div>
-               <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
+               
             <div id="pesonnes" data-limit="2"
               class="relative border border-2 border-red-400 row-start-3 col-start-8 col-end-11"
             >
