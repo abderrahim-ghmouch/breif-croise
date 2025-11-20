@@ -1,63 +1,52 @@
+let closingButton = document.getElementById("close");
 
+let formulaire = document.getElementById("form");
 
-let closingButton = document.getElementById("close")
+let newWorker = document.getElementById("addNewWorker");
 
-let formulaire = document.getElementById("form")
+let role = document.getElementById("role");
 
-let newWorker = document.getElementById("addNewWorker")
+let url = document.getElementById("url");
 
-let role= document.getElementById("role")
+let addExp = document.getElementById("expButton");
 
-let url = document.getElementById("url")
+let canceled = document.getElementById("cancel");
 
-let addExp = document.getElementById("expButton")
+let experienceForms = document.getElementById("experienceForms");
 
-let canceled = document.getElementById("cancel")
-
-let experienceForms= document.getElementById("experienceForms")
-
-let allworkerData=[]
+let allworkerData = [];
 
 let worker;
 
-let workers = []
-
-
+let workers = [];
 
 closingButton.addEventListener("click", (e) => {
-
-    e.preventDefault()
-formulaire.classList.add("hidden");
-
+  e.preventDefault();
+  formulaire.classList.add("hidden");
 });
-
-
 
 canceled.addEventListener("click", (e) => {
-e.preventDefault()
+  e.preventDefault();
 
-formulaire.classList.add("hidden");
-
+  formulaire.classList.add("hidden");
 });
 
-document.addEventListener("keydown",(e)=> {
-        if(e.key=="Escape")
-            {
+document.addEventListener("keydown", (e) => {
+  if (e.key == "Escape") {
     formulaire.classList.add("hidden");
-         }
-        })
-        
-        
-        newWorker.addEventListener("click", ()=>{
-        
-        formulaire.classList.remove("hidden");
-        
-        })
+  }
+});
+
+newWorker.addEventListener("click", () => {
+  formulaire.classList.remove("hidden");
+});
 
 addExp.addEventListener("click", (e) => {
-    e.preventDefault(); // prevent default button behavior
+  e.preventDefault(); // prevent default button behavior
 
-    experienceForms.insertAdjacentHTML("beforeend", `
+  experienceForms.insertAdjacentHTML(
+    "beforeend",
+    `
        <div class="flex flex-cols w-full fonts-black"></div>
           <div
             id=""
@@ -116,120 +105,111 @@ addExp.addEventListener("click", (e) => {
           </div>
 
         </div>
-    `);
+    `
+  );
 });
-
-
-// function validform() {
-//     let userName= document.getElementById("name")
-//   console.log(userName.value);
-  
-//     let email = document.getElementById("email")
-//     let phone =document.getElementById("phone")
-    
-//     let allValid = true;
-    
-//     let userNameregex = /^[A-Z][a-z'-]+(?: [A-Z][a-z'-]+)+$/;
-//     let emailregex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-//     let phoneregex = /^(?:\+212|0)(6|7)[0-9]{8}$/;
-//     if(!userNameregex.test(userName.value)){
-//         alert("sdsdd");
-//     }
-//     let validname = validate(userName.value,userNameregex);
-    
-//     let validemail = validate(email.value, emailregex);
-    
-//     let validphone = validate(phone.value, phoneregex);
-    
-//   if (!validname || !validemail || !validphone) {
-//     allValid = false;
-  
-// }
-
-// return allValid;
-// }
 
 let submitButton = document.getElementById("submiting");
 
-
-
-function validation(value,regex)
-{
-  return regex.test(value.trim())
+function validation(value, regex) {
+  return regex.test(value.trim());
 }
 
 let exptest = [];
 
-document.addEventListener("click",(e)=>{
-  document.addEventListener("click",(e)=>{
-  if(e.target.id == "submiting"){
-    e.preventDefault();
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault();
 
-    let username = document.getElementById("name");
-    let email = document.getElementById("email");
-    let phone = document.getElementById("phone");
-    let role = document.getElementById("role");
+  let username = document.getElementById("name");
+  let email = document.getElementById("email");
+  let phone = document.getElementById("phone");
+  let image = document.getElementById("url");
 
-    let nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
-    let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    let phoneRegex = /^(?:\+212|0)(6|7)[0-9]{8}$/;
+  let nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+  let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  let phoneRegex = /^(?:\+212|0)(6|7)[0-9]{8}$/;
 
-    if (!validation(username.value, nameRegex)) return username.focus();
-    if (!validation(email.value, emailRegex))   return email.focus();
-    if (!validation(phone.value, phoneRegex))   return phone.focus();
+  if (!validation(username.value, nameRegex)) {
+    username.focus();
+    return;
+  }
+  if (!validation(email.value, emailRegex)) {
+    email.focus();
+    return;
+  }
+  if (!validation(phone.value, phoneRegex)) {
+    phone.focus();
+    return;
+  }
 
-   
-    let experiencesList = [];
+  let experiencesList = [];
 
-    let allExp = document.querySelectorAll(".expForm");
+  let allExp = document.querySelectorAll(".expForm");
 
-    allExp.forEach(exp => {
+  allExp.forEach((exp) => {
+    let company = exp.querySelector(".company");
+    let job = exp.querySelector(".job");
+    let startDate = exp.querySelector(".startDate");
+    let endDate = exp.querySelector(".endDate");
 
-      let company = exp.querySelector(".company");
-      let job = exp.querySelector(".job");
-      let startDate = exp.querySelector(".startDate");
-      let endDate = exp.querySelector(".endDate");
+    let companyRegex = /^[A-Za-z0-9&.,'’\- ]{2,50}$/;
+    let jobRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
 
-      let companyRegex = /^[A-Za-z0-9&.,'’\- ]{2,50}$/;
-      let jobRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+    if (!companyRegex.test(company.value.trim())) {
+      company.focus();
+      return;
+    }
 
-      
-      if (!companyRegex.test(company.value.trim())) {
-        company.focus();
-        return;
-      }
+    if (!jobRegex.test(job.value.trim())) {
+      job.focus();
+      return;
+    }
 
-      if (!jobRegex.test(job.value.trim())) {
-        job.focus();
-        return;
-      }
-
-      let expObj = {
-        company: company.value.trim(),
-        job: job.value.trim(),
-        start: startDate.value,
-        end: endDate.value
-      };
-
-      experiencesList.push(expObj);
-    });
-
-    console.log("EXPERIENCES:", experiencesList);
-
-    // Build employee object
-    const employee = {
-      name: username.value.trim(),
-      email: email.value.trim(),
-      phone: phone.value.trim(),
-      role: role.value,
-      experiences: experiencesList
+    let expObj = {
+      company: company.value.trim(),
+      job: job.value.trim(),
+      start: startDate.value,
+      end: endDate.value,
     };
 
-    console.log("EMPLOYEE:", employee);
+    experiencesList.push(expObj);
+  });
+
+  if (!image.value) {
+    image.value =
+      "https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
   }
+
+  const employee = {
+    name: username.value.trim(),
+    email: email.value.trim(),
+    phone: phone.value.trim(),
+    role: role.value,
+    image: image.value,
+    experiences: experiencesList,
+  };
+
+  workers.push(employee);
+  console.log(workers);
+  formulaire.classList.add("hidden");
 });
 
+document.getElementById("url").addEventListener("input", (e)=>{
+  let profile = document.getElementById("profile")
+  let tempImg = new Image();
 
-// // let submitButton = document.getElementById("submiting") 
+  tempImg.src = e.target.value;
+
+  tempImg.onload = ()=>{
+    profile.src = e.target.value;
+  }
+
+  tempImg.onerror = ()=>{
+    profile.src = "https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
+  }
+
+})
+
+// // let submitButton = document.getElementById("submiting")
 
 // submitButton.addEventListener()
