@@ -190,6 +190,7 @@ submitButton.addEventListener("click", (e) => {
     role: role.value,
     image: image.value,
     experiences: experiencesList,
+    status: "unassigned"
   };
 
   workers.push(employee);
@@ -238,5 +239,14 @@ function addWorkerList(workers) {
   });
 }
 
+
+let addBtns = document.querySelectorAll(".addButton")
+
+addBtns.forEach(btn => {
+  btn.addEventListener("click", ()=>{
+    let id = btn.parentElement.id
+    let limit = btn.parentElement.dataset.limit
+  })
+})
  
 
