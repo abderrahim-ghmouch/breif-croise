@@ -8,6 +8,8 @@ let role = document.getElementById("role");
 
 let url = document.getElementById("url");
 
+let formModal = document.getElementById("formulaire")
+
 let addExp = document.getElementById("expButton");
 
 let canceled = document.getElementById("cancel");
@@ -29,6 +31,7 @@ canceled.addEventListener("click", (e) => {
   e.preventDefault();
 
   formulaire.classList.add("hidden");
+  formModal.reset()
 });
 
 document.addEventListener("keydown", (e) => {
@@ -192,6 +195,10 @@ submitButton.addEventListener("click", (e) => {
   workers.push(employee);
   console.log(workers);
   formulaire.classList.add("hidden");
+
+  addWorkerList(workers)
+  formModal.reset()
+
 });
 
 document.getElementById("url").addEventListener("input", (e)=>{
@@ -210,6 +217,26 @@ document.getElementById("url").addEventListener("input", (e)=>{
 
 })
 
-// // let submitButton = document.getElementById("submiting")
+const listsection =document.getElementById("listsection")
+ 
 
-// submitButton.addEventListener()
+function addWorkerList(workers) {
+  console.log(workers);
+  // Clear list BEFORE looping
+  listsection.innerHTML = "";
+
+  workers.forEach(worker => {
+    listsection.innerHTML += `
+      <div class="bg-white w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
+        <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
+        <div class="flex flex-col text-black">
+          <h1 class="font-bold text-lg">${worker.name}</h1>
+          <h2 class="text-sm text-gray-700">${worker.role}</h2>
+        </div>
+      </div>
+    `;
+  });
+}
+
+ 
+
