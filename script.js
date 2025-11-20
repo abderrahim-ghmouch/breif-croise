@@ -59,7 +59,7 @@ addExp.addEventListener("click", (e) => {
        <div class="flex flex-cols w-full fonts-black"></div>
           <div
             id=""
-            class="flex flex-col gap-4 justify-around border border-2 border-orange-200 rounded-lg w-[100%] p-2 mt-2 gap-8"
+            class="expForm flex flex-col gap-4 justify-around border border-2 border-orange-200 rounded-lg w-[100%] p-2 mt-2 gap-8"
           >
             <div class="flex gap-4">
               <div
@@ -67,10 +67,9 @@ addExp.addEventListener("click", (e) => {
               >
                 <label for="company">comapny name:</label>
                 <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  class="border-2 rounded-md w-[full] p-2 m-0 border-orange-200 text-black bg-[#F3E9DC]"
+                   name="company"
+                    type="text"
+                    class="company border-2 rounded-md w-[full] p-2 m-0 border-orange-200 text-black bg-[#F3E9DC]"
                 />
               </div>
               <div
@@ -79,9 +78,10 @@ addExp.addEventListener("click", (e) => {
                 <label for="jop">job title:</label>
                 <input
                   id="job"
-                  name="jobTitle"
-                  type="text"
-                  class="border-2 rounded-md w-[full] p-2 border-orange-200 text-black bg-[#F3E9DC]"
+   
+                    name="jobTitle"
+                    type="text"
+                    class="job border-2 rounded-md w-[full] p-2 border-orange-200 text-black bg-[#F3E9DC]"
                 />
               </div>
             </div>
@@ -94,10 +94,9 @@ addExp.addEventListener("click", (e) => {
                   >Started in :</label
                 >
                 <input
-                  id="startDate"
                   name="starteDate"
-                  class="text-gray-800"
-                  type="date"
+                    class="startDate text-gray-800"
+                    type="date"
                 />
               </div>
               <div
@@ -105,10 +104,10 @@ addExp.addEventListener("click", (e) => {
               >
                 <label class="font-semibold " for="endDate">ended in :</label>
                 <input
-                  id="endDate"
-                  name="endDate"
-                  class="text-gray-800"
-                  type="date"
+              
+                    name="endDate"
+                    class="endDate text-gray-800"
+                    type="date"
                 />
               </div>
             </div>
@@ -150,16 +149,11 @@ addExp.addEventListener("click", (e) => {
 
 let submitButton = document.getElementById("submiting");
 
-// submitButton.addEventListener("click",(e)=>
-//     {
-//         e.preventdefault();
-//     console.log(submitButton);
-    
-//     })
+
 
 function validation(value,regex)
 {
-  return regex.test(value)
+  return regex.test(value.trim())
 }
 document.addEventListener("click",(e)=>{
   if(e.target.id == "submiting"){
@@ -168,7 +162,7 @@ document.addEventListener("click",(e)=>{
     let email = document.getElementById("email");
     let phone = document.getElementById("phone");
 
-    let nameRegex = /^[a-zA-Z\s]+$/; 
+    let nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/
     let emailRegex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     let phoneRegex=/^(?:\+212|0)(6|7)[0-9]{8}$/
 
@@ -176,10 +170,10 @@ document.addEventListener("click",(e)=>{
     let validEmail = validation(email.value,emailRegex);
     let validPhone = validation(phone.value,phoneRegex);
 
-       if (!validName) {
+      if (!validName) {
 
         username.focus();
-       
+
         return null;
     }
     if(!validEmail)
@@ -187,12 +181,33 @@ document.addEventListener("click",(e)=>{
         email.focus();
 
       }
-      if(!validphone)
+      if(!validPhone)
         {
           phone.focus();
+
         }
+
+      let allexperience = document.querySelectorAll(".expForm")
+
+      allexperience.forEach((exp,i)=>
+      {
+        let company=exp.querySelector(".company")
+      console.log(company);
+        
+        let job =exp.querySelector(".job")
+
+        let startDate=exp.queryselector(".starteDate")
+
+        let enddate=exp.querySelector(".endDate")
+
+
+
+      })
   }
+
 })
+
+
 // // let submitButton = document.getElementById("submiting") 
 
 // submitButton.addEventListener()
