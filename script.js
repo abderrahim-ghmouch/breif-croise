@@ -366,7 +366,9 @@ function addToRoom(idWorker, room, limit){
             <h1 class="font-bold text-lg">${worker.name}</h1>
             <h2 class="text-sm text-gray-700">${worker.role}</h2>
           </div>`
-          // container.classList.remove("bg-red-500 , bg-opacity-20");
+          container.classList.remove("bg-red-500","bg-opacity-20");
+
+         
 
     div.addEventListener("click", ()=>{
       afficherProfile(idWorker)
@@ -380,8 +382,10 @@ function addToRoom(idWorker, room, limit){
       worker.status = "unassigned"
       div.remove()
       addWorkerList(workers);
+      
+        
     })
-
+    
     container.appendChild(div);
     
     addWorkerList(workers);
@@ -401,7 +405,7 @@ function afficherProfile(idWorker){
   let worker = workers.find(w => w.id === idWorker);
   let modal = document.getElementById('profile-modal');
   modal.classList.remove("hidden")
-  
+ 
 
   let profile = modal.querySelector('.profile');
   
