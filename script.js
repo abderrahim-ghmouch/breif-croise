@@ -383,7 +383,10 @@ function addToRoom(idWorker, room, limit){
       div.remove()
       addWorkerList(workers);
       
-        
+             if(container.children.length==1)
+                  {
+                     container.classList.add("bg-red-500","bg-opacity-20");
+                  }
     })
     
     container.appendChild(div);
