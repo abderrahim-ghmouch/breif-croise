@@ -242,7 +242,7 @@ function addWorkerList(workers) {
 
   filterd.forEach(worker => {
     listsection.innerHTML += `
-      <div onClick="afficherProfile(${worker.id})" class="bg-white w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
+      <div onClick="afficherProfile(${worker.id})" class="bg-orange w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
         <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
         <div class="flex flex-col text-black">
           <h1 class="font-bold text-lg">${worker.name}</h1>
@@ -273,7 +273,7 @@ addBtns.forEach(btn => {
             <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
             <div class="flex flex-col text-black">
               <h1 class="font-bold text-lg">${worker.name}</h1>
-              <h2 class="text-sm text-gray-700">${worker.role}</h2>
+               <h2 class="text-sm text-gray-700">${worker.role}</h2>
             </div>
           </div>
         `;
