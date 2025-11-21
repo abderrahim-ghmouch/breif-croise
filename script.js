@@ -423,9 +423,13 @@ function addToRoom(idWorker, room, limit){
 
     let div = document.createElement("div")
     div.id = `worker-${worker.id}`
-    div.className = "bg-white w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2"
+    div.className = "bg-white w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2 relative"
 
-    div.innerHTML = `<img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
+    div.innerHTML = `
+    <i
+        class="remove-from-room fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
+      ></i>
+    <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
           <div class="flex flex-col text-black">
             <h1 class="font-bold text-lg">${worker.name}</h1>
             <h2 class="text-sm text-gray-700">${worker.role}</h2>
@@ -434,6 +438,8 @@ function addToRoom(idWorker, room, limit){
     div.addEventListener("click", ()=>{
       afficherProfile(idWorker)
     })
+
+
 
     container.appendChild(div);
     addWorkerList(workers);
