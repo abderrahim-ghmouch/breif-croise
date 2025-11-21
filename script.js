@@ -20,124 +20,7 @@ let allworkerData = [];
 
 let worker;
 
-let workers = [
-  {
-    id: 101234,
-    name: "Sarah Johnson",
-    email: "sarah.johnson@example.com",
-    phone: "0612345678",
-    role: "Receptionist",
-    image: "/img/user1.png",
-    experiences: [
-      { company: "Hotel Atlas", job: "Front Desk", start: "2021-02", end: "2023-01" }
-    ],
-    status: "unassigned",
-  },
-  {
-    id: 101235,
-    name: "Ahmed El Fassi",
-    email: "ahmed.fassi@example.com",
-    phone: "0654321876",
-    role: "IT Technician",
-    image: "/img/user2.png",
-    experiences: [
-      { company: "Maroc Telecom", job: "Tech Support", start: "2020-01", end: "2022-08" }
-    ],
-    status: "unassigned",
-  },
-  {
-    id: 101236,
-    name: "Lisa Wong",
-    email: "lisa.wong@example.com",
-    phone: "0678123490",
-    role: "Security Agent",
-    image: "/img/user3.png",
-    experiences: [
-      { company: "AXA", job: "Security Staff", start: "2019-05", end: "2021-12" }
-    ],
-    status: "unassigned",
-  },
-  {
-    id: 101237,
-    name: "Mohamed Idrissi",
-    email: "mohamed.idrissi@example.com",
-    phone: "0623458790",
-    role: "Manager",
-    image: "/img/user4.png",
-    experiences: [
-      { company: "Decathlon", job: "Store Manager", start: "2020-04", end: "2023-10" }
-    ],
-    status: "unassigned",
-  },
-  {
-    id: 101238,
-    name: "Emily Carter",
-    email: "emily.carter@example.com",
-    phone: "0611122233",
-    role: "Cleaning Staff",
-    image: "/img/user5.png",
-    experiences: [
-      { company: "Clinique Agdal", job: "Cleaning Assistant", start: "2022-01", end: "2023-05" }
-    ],
-    status: "unassigned",
-  },
-  {
-    id: 101239,
-    name: "Youssef Benali",
-    email: "youssef.benali@example.com",
-    phone: "0699988877",
-    role: "Receptionist",
-    image: "/img/user6.png",
-    experiences: [],
-    status: "unassigned",
-  },
-  {
-    id: 101240,
-    name: "Maria Gonzalez",
-    email: "maria.gonzalez@example.com",
-    phone: "0687654433",
-    role: "IT Technician",
-    image: "/img/user7.png",
-    experiences: [
-      { company: "HP", job: "Junior Technician", start: "2021-06", end: "2022-11" }
-    ],
-    status: "unassigned",
-  },
-  {
-    id: 101241,
-    name: "Hassan Oubaha",
-    email: "hassan.oubaha@example.com",
-    phone: "0655234478",
-    role: "Security Agent",
-    image: "/img/user8.png",
-    experiences: [
-      { company: "Carrefour", job: "Security Guard", start: "2020-02", end: "2023-01" }
-    ],
-    status: "unassigned",
-  },
-  {
-    id: 101242,
-    name: "Julia Smith",
-    email: "julia.smith@example.com",
-    phone: "0677001122",
-    role: "Manager",
-    image: "/img/user9.png",
-    experiences: [],
-    status: "unassigned",
-  },
-  {
-    id: 101243,
-    name: "Omar Chafi",
-    email: "omar.chafi@example.com",
-    phone: "0612349900",
-    role: "Cleaning Staff",
-    image: "/img/user10.png",
-    experiences: [
-      { company: "Riad Yamna", job: "Cleaner", start: "2019-10", end: "2022-03" }
-    ],
-    status: "unassigned",
-  }
-];
+let workers = [];
 
 closingButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -156,6 +39,18 @@ document.addEventListener("keydown", (e) => {
     formulaire.classList.add("hidden");
   }
 });
+
+formulaire.addEventListener("click",(e)=>{
+if(e.target==formulaire)
+  {
+    e.preventDefault()
+    formulaire.classList.add("hidden");
+    formModal.reset()
+
+
+  }
+})
+
 
 newWorker.addEventListener("click", () => {
   formulaire.classList.remove("hidden");
@@ -274,6 +169,7 @@ submitButton.addEventListener("click", (e) => {
 
     let companyRegex = /^[A-Za-z0-9&.,'’\- ]{2,50}$/;
     let jobRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+  
 
     if (!companyRegex.test(company.value.trim())) {
       company.focus();
@@ -341,7 +237,7 @@ const listsection =document.getElementById("listsection")
 
 function addWorkerList(workers) {
   let filterd = workers.filter(w => w.status === "unassigned")
-  // Clear list BEFORE looping
+
   listsection.innerHTML = "";
 
   filterd.forEach(worker => {
@@ -381,6 +277,7 @@ addBtns.forEach(btn => {
             </div>
           </div>
         `;
+       
       });
     }else{
       list.innerHTML = "<p>No Workers</p>"
@@ -423,7 +320,7 @@ function addToRoom(idWorker, room, limit){
 
     let div = document.createElement("div")
     div.id = `worker-${worker.id}`
-    div.className = "bg-white w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2 relative"
+    div.className = "bg-white w-60 h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2 relative"
 
     div.innerHTML = `
     <i
@@ -434,10 +331,13 @@ function addToRoom(idWorker, room, limit){
             <h1 class="font-bold text-lg">${worker.name}</h1>
             <h2 class="text-sm text-gray-700">${worker.role}</h2>
           </div>`
+          // container.classList.remove("bg-red-500 , bg-opacity-20");
 
     div.addEventListener("click", ()=>{
       afficherProfile(idWorker)
+    
     })
+
 
     let removeBtn = div.querySelector(".remove-from-room");
     removeBtn.addEventListener("click", e => {
@@ -448,15 +348,18 @@ function addToRoom(idWorker, room, limit){
     })
 
     container.appendChild(div);
+    
     addWorkerList(workers);
   }else{
     alert("Room Is Full");
   }
 
+
   let modal = document.getElementById("availableWorkers");
   modal.classList.add("hidden");
   let list = modal.querySelector(".worker-list");
   list.innerHTML = "";
+
 }
 
 function afficherProfile(idWorker){
@@ -482,3 +385,5 @@ function afficherProfile(idWorker){
       modal.classList.add("hidden");
     })
 }
+
+
