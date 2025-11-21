@@ -439,7 +439,13 @@ function addToRoom(idWorker, room, limit){
       afficherProfile(idWorker)
     })
 
-
+    let removeBtn = div.querySelector(".remove-from-room");
+    removeBtn.addEventListener("click", e => {
+      e.stopPropagation();
+      worker.status = "unassigned"
+      div.remove()
+      addWorkerList(workers);
+    })
 
     container.appendChild(div);
     addWorkerList(workers);
