@@ -20,7 +20,42 @@ let allworkerData = [];
 
 let worker;
 
-let workers = [];
+let workers = [  {
+    id: 101234,
+    name: "Sarah Johnson",
+    email: "sarah.johnson@example.com",
+    phone: "0612345678",
+    role: "Receptionist",
+    image: "/img/user1.png",
+    experiences: [
+      { company: "Hotel Atlas", job: "Front Desk", start: "2021-02", end: "2023-01" }
+    ],
+    status: "unassigned",
+  },
+  {
+    id: 101235,
+    name: "test tree",
+    email: "ahmed.fassi@example.com",
+    phone: "0654321876",
+    role: "IT Technician",
+    image: "/img/user2.png",
+    experiences: [
+      { company: "Maroc Telecom", job: "Tech Support", start: "2020-01", end: "2022-08" }
+    ],
+    status: "unassigned",
+  },
+{
+    id: 101238,
+    name: "cristiano",
+    email: "georgina@example.com",
+    phone: "0654321876",
+    role: "Cleaning Staff",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmkPMfqHKjGC-fIVOlf2rsZRaXM7TZVLylhQ&s",
+    experiences: [
+      { company: "Maroc Telecom", job: "Tech Support", start: "2020-01", end: "2022-08" }
+    ],
+    status: "unassigned",
+  }];
 
 closingButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -242,11 +277,11 @@ function addWorkerList(workers) {
 
   filterd.forEach(worker => {
     listsection.innerHTML += `
-      <div onClick="afficherProfile(${worker.id})" class="bg-orange w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
+      <div onClick="afficherProfile(${worker.id})" class="bg-orange-200 w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
         <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
         <div class="flex flex-col text-black">
-          <h1 class="font-bold text-lg">${worker.name}</h1>
-          <h2 class="text-sm text-gray-700">${worker.role}</h2>
+          <h3 class="font-bold text-lg">${worker.name}</h3>
+          <h5 class="text-sm text-gray-700">${worker.role}</h5>
         </div>
       </div>
     `;
@@ -269,8 +304,8 @@ addBtns.forEach(btn => {
     if(availableWorkers.length > 0 ){
       availableWorkers.forEach(worker => {
         list.innerHTML += `
-          <div onClick="addToRoom(${worker.id},'${room}',${limit})" class="bg-white w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
-            <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
+          <div onClick="addToRoom(${worker.id},'${room}',${limit})" class="bg-orange-200  bg-opacity-40 w-full h-20 border-2 border-orange-200 rounded-md flex items-center gap-6 p-2 mb-2">
+            <img class="border-2 border-orange-200 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
             <div class="flex flex-col text-black">
               <h1 class="font-bold text-lg">${worker.name}</h1>
                <h2 class="text-sm text-gray-700">${worker.role}</h2>
