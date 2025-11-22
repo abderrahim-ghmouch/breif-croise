@@ -1,317 +1,317 @@
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <script src="https://cdn.tailwindcss.com"></script>
-      <link rel="stylesheet" href="style.css" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
-        rel="stylesheet"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      />
-    </head>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+      </head>
 
-    <body class="font-[lato]">
-      <div
-        id="form"
-        class="flex justify-center items-center w-full h-screen backdrop-blur-sm fixed z-[10] hidden"
-      >
-        <form
-        id="formulaire"
-          class="flex flex-col h-[95%] justify-around items-center relative gap-4 p-4 w-80 border-2 border-orange-800 rounded-lg bg-orange-400 text-white overflow-y-scroll"
+      <body class="font-[lato]">
+        <div
+          id="form"
+          class="flex justify-center items-center w-full h-screen backdrop-blur-sm fixed z-[10] hidden"
         >
-          <i
-            id="close"
-            class="fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
-          ></i>
-
-          <h1
-            class="font-semibold bg-orange-300 w-30 h-20 p-2 border-2 border-orange-200 rounded-md"
+          <form
+          id="formulaire"
+            class="flex flex-col h-[95%] justify-around items-center relative gap-4 p-4 w-80 border-2 border-orange-800 rounded-lg bg-orange-400 text-white overflow-y-scroll"
           >
-            employe information
-          </h1>
+            <i
+              id="close"
+              class="fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
+            ></i>
 
-          <div class="w-full">
-            <label for="name" class="font-semibold">Name:</label><br />
-            <input
-              type="text"
-              id="name"
-              placeholder="full name"
-              class="border-2 text-black rounded-md w-full p-2 border-orange-200 bg-[#F3E9DC]"
-            />
-          </div>
-
-          <div class="w-full">
-            <label for="role" class="font-semibold">Role:</label><br />
-            <select
-              id="role"
-              name="userRole"
-              class="border-2 rounded-md w-full p-2 border-orange-200 text-black bg-[#F3E9DC]"
+            <h1
+              class="font-semibold bg-orange-300 w-30 h-20 p-2 border-2 border-orange-200 rounded-md"
             >
-              <option selected disabled>select role</option>
-              <option>Receptionist</option>
-              <option>IT Technician</option>
-              <option>Security Agent</option>
-              <option>Manager</option>
-              <option>Cleaning Staff</option>
-            </select>
-          </div>
+              employe information
+            </h1>
 
-          <div class="w-full">
-            <label for="url" class="font-semibold">URL Photo:</label><br />
-            <input
-              id="url"
-              name="userPhoto"
-              type="url"
-              placeholder="URl file"
-              class="border-2 rounded-md w-full p-2 border-orange-200 text-black bg-[#F3E9DC]"
-            />
-            <img id="profile"
-              class="w-20 h-20 border-2 mt-2 rounded-md border-dashed border-orange-200"
-              src="https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k="
-              alt=""
-            />
-          </div>
+            <div class="w-full">
+              <label for="name" class="font-semibold">Name:</label><br />
+              <input
+                type="text"
+                id="name"
+                placeholder="full name"
+                class="border-2 text-black rounded-md w-full p-2 border-orange-200 bg-[#F3E9DC]"
+              />
+            </div>
 
-          <div class="w-full">
-            <label for="email" class="font-semibold">Email Address:</label><br />
-            <input
-              id="email"
-              name="userEmail"
-              type="email"
-              placeholder="email address"
-              class="border-2 rounded-md w-full p-2 border-orange-200 text-black bg-[#F3E9DC]"
-            />
-          </div>
+            <div class="w-full">
+              <label for="role" class="font-semibold">Role:</label><br />
+              <select
+                id="role"
+                name="userRole"
+                class="border-2 rounded-md w-full p-2 border-orange-200 text-black bg-[#F3E9DC]"
+              >
+                <option selected disabled>select role</option>
+                <option>Receptionist</option>
+                <option>IT Technician</option>
+                <option>Security Agent</option>
+                <option>Manager</option>
+                <option>Cleaning Staff</option>
+              </select>
+            </div>
 
-          <div class="w-full">
-            <label for="phone" class="font-semibold">Phone Number:</label><br />
-            <input
-              id="phone"
-              name="userPhone"
-              type="tel"
-              placeholder="phone number"
-              class="rounded-md w-full p-2 border-2 border-orange-200 text-black bg-[#F3E9DC]"
-/>
-          </div>
+            <div class="w-full">
+              <label for="url" class="font-semibold">URL Photo:</label><br />
+              <input
+                id="url"
+                name="userPhoto"
+                type="url"
+                placeholder="URl file"
+                class="border-2 rounded-md w-full p-2 border-orange-200 text-black bg-[#F3E9DC]"
+              />
+              <img id="profile"
+                class="w-20 h-20 border-2 mt-2 rounded-md border-dashed border-orange-200"
+                src="https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k="
+                alt=""
+              />
+            </div>
 
-          <div id="experienceForms" class="experience w-full">
-            <div class="flex flex-cols w-full fonts-black"></div>
-            <div
-              id=""
-              class=" expForm flex flex-col gap-4 justify-around border border-2 border-orange-200 rounded-lg w-[100%] p-2 mt-2 gap-8"
-            >
-              <div class="flex gap-4">
-                <div
-                  class="flex flex-col w-[48%] text-center justify-center font-semibold"
-                >
-                  <label for="company">comapny name:</label>
-                  <input
-          
-                    name="company"
-                    type="text"
-                    class="company border-2 rounded-md w-[full] p-2 m-0 border-orange-200 text-black bg-[#F3E9DC]"
-                  />
-                </div>
-                <div
-                  class="flex flex-col w-[48%] text-center justify-center font-semibold"
-                >
-                  <label for="jop">job title:</label>
-                  <input
-                 
-                    name="jobTitle"
-                    type="text"
-                    class="job border-2 rounded-md w-[full] p-2 border-orange-200 text-black bg-[#F3E9DC]"
-                  />
-                </div>
-              </div>
+            <div class="w-full">
+              <label for="email" class="font-semibold">Email Address:</label><br />
+              <input
+                id="email"
+                name="userEmail"
+                type="email"
+                placeholder="email address"
+                class="border-2 rounded-md w-full p-2 border-orange-200 text-black bg-[#F3E9DC]"
+              />
+            </div>
 
-              <div class="flex gap-4">
-                <div
-                  class="flex flex-col w-[48%] text-center justify-center border-2 rounded"
-                >
-                  <label class="font-semibold" for="startDate "
-                    >Started in :</label
+            <div class="w-full">
+              <label for="phone" class="font-semibold">Phone Number:</label><br />
+              <input
+                id="phone"
+                name="userPhone"
+                type="tel"
+                placeholder="phone number"
+                class="rounded-md w-full p-2 border-2 border-orange-200 text-black bg-[#F3E9DC]"
+  />
+            </div>
+
+            <div id="experienceForms" class="experience w-full">
+              <div class="flex flex-cols w-full fonts-black"></div>
+              <div
+                id=""
+                class=" expForm flex flex-col gap-4 justify-around border border-2 border-orange-200 rounded-lg w-[100%] p-2 mt-2 gap-8"
+              >
+                <div class="flex gap-4">
+                  <div
+                    class="flex flex-col w-[48%] text-center justify-center font-semibold"
                   >
-                  <input
-                    
-                    name="starteDate"
-                    class="startDate text-gray-800"
-                    type="date"
-                  />
+                    <label for="company">comapny name:</label>
+                    <input
+            
+                      name="company"
+                      type="text"
+                      class="company border-2 rounded-md w-[full] p-2 m-0 border-orange-200 text-black bg-[#F3E9DC]"
+                    />
+                  </div>
+                  <div
+                    class="flex flex-col w-[48%] text-center justify-center font-semibold"
+                  >
+                    <label for="jop">job title:</label>
+                    <input
+                  
+                      name="jobTitle"
+                      type="text"
+                      class="job border-2 rounded-md w-[full] p-2 border-orange-200 text-black bg-[#F3E9DC]"
+                    />
+                  </div>
                 </div>
-                <div
-                  class="flex flex-col w-[48%] text-center justify-center border-2 rounded"
-                >
-                  <label class="font-semibold" for="endDate">ended in :</label>
-                  <input
-              
-                    name="endDate"
-                    class="endDate text-gray-800"
-                    type="date"
-                  />
+
+                <div class="flex gap-4">
+                  <div
+                    class="flex flex-col w-[48%] text-center justify-center border-2 rounded"
+                  >
+                    <label class="font-semibold" for="startDate "
+                      >Started in :</label
+                    >
+                    <input
+                      
+                      name="starteDate"
+                      class="startDate text-gray-800"
+                      type="date"
+                    />
+                  </div>
+                  <div
+                    class="flex flex-col w-[48%] text-center justify-center border-2 rounded"
+                  >
+                    <label class="font-semibold" for="endDate">ended in :</label>
+                    <input
                 
+                      name="endDate"
+                      class="endDate text-gray-800"
+                      type="date"
+                    />
+                  
+                  </div>
+                  
                 </div>
                 
               </div>
-              
+            
             </div>
-          
-          </div>
-          <div class="w-full h-10 m-0">
-            <button
-              type="button"
-              id="expButton"
-              class="font-semibold border-2 border-black rounded-md w-full p-0 border-orange-400 bg-[#77BEF0] hover:bg-black"
-            >
-              add experience
-            </button>
-          </div>
+            <div class="w-full h-10 m-0">
+              <button
+                type="button"
+                id="expButton"
+                class="font-semibold border-2 border-black rounded-md w-full p-0 border-orange-400 bg-[#77BEF0] hover:bg-black"
+              >
+                add experience
+              </button>
+            </div>
 
-          <div class="flex justify-between gap-7">
-            <button
-              id="submiting" type="submit"
-              class="border-2 border-orange-400 bg-black rounded-md h-10 w-20 font-semibold hover:bg-[#77BEF0]"
-            >
-              Submit
-            </button>
-            <button
-              id="cancel" 
-              class="border-2 border-orange-400 hover:bg-[#77BEF0] rounded-md h-10 w-20 font-semibold bg-black"
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-      </div>
-
-      <div
-        id="availableWorkers"
-        class="flex justify-center items-center w-full h-screen backdrop-blur-sm fixed z-[10] hidden"
-      >
-        <div
-        id="formulaire"
-          class="flex flex-col h-[90%] shadow-xl shadow-yellow-200 items-center relative gap-4 p-4 w-80 border-2 border-orange-200 bg-opacity-60 rounded-lg bg-orange-400 text-white overflow-y-scroll"
-        >
-          <i
-            id="close-list"
-            class="fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
-          ></i>
-
-          <h1
-            class="font-semibold w-30 h-10 p-2 border-b-2 border-orange-200 w-full text-center"
-          >
-            Available Workers
-          </h1>
-
-          <div class="worker-list">
-
-          </div>
+            <div class="flex justify-between gap-7">
+              <button
+                id="submiting" type="submit"
+                class="border-2 border-orange-400 bg-black rounded-md h-10 w-20 font-semibold hover:bg-[#77BEF0]"
+              >
+                Submit
+              </button>
+              <button
+                id="cancel" 
+                class="border-2 border-orange-400 hover:bg-[#77BEF0] rounded-md h-10 w-20 font-semibold bg-black"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
         </div>
-      </div>
 
-      <div
-        id="profile-modal"
-        class="flex justify-center items-center w-full h-screen backdrop-blur-sm fixed z-[10] hidden"
-      >
         <div
-        id="formulaire"
-          class="flex flex-col h-[95%] justify-around items-center relative gap-4 p-4 w-80 border-2 border-orange-800 rounded-lg bg-orange-400 text-white overflow-y-scroll"
-        >
-          <i
-            id="close-profile"
-            class="fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
-          ></i>
-
-          <h1
-            class="font-semibold bg-orange-300 w-30 h-20 p-2 border-2 border-orange-200 rounded-md"
-          >
-            Profile
-          </h1>
-
-          <div class="profile">
-
-          </div>
-        </div>
-      </div>
-
-      <main class="">
-        <div
-          class="grid grid-rows-6 w-full h-screen gap-1 lg:grid lg:grid-cols-10 lg:grid-rows-1"
+          id="availableWorkers"
+          class="flex justify-center items-center w-full h-screen backdrop-blur-sm fixed z-[10] hidden"
         >
           <div
-            class="grid grid-cols-[repeat(13,1fr)] w-full grid-rows-3 row-span-2 bg-[url(/img/plan.jpg)] bg-contain mt-0 bg-no-repeat lg:bg-center lg:col-span-8 lg:order-2"
+          id="formulaire"
+            class="flex flex-col h-[90%] shadow-xl shadow-yellow-200 items-center relative gap-4 p-4 w-80 border-2 border-orange-200 bg-opacity-60 rounded-lg bg-orange-400 text-white overflow-y-scroll"
           >
-            <div id="conference" data-limit="4"
-              class="relative   col-span-5 row-span-1" >
-              salle de conference
-                 <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4  border-black rounded-lg">ADD</button>
-            </div>
-            <div id="reciption" data-limit="6"
-              class="relative bg-red-500 bg-opacity-20 col-span-5 bg-red-500 bg-opacity-20 row-start-2 row-end-4"> 
-              reciption
-                 <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
-            </div>
-            <div id="serveurs" data-limit="2" 
-              class="relative bg-red-500 bg-opacity-20 col-start-8 col-end-11 bg-red-500 bg-opacity-2"
+            <i
+              id="close-list"
+              class="fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
+            ></i>
+
+            <h1
+              class="font-semibold w-30 h-10 p-2 border-b-2 border-orange-200 w-full text-center"
             >
-              salle de serveures
-                 <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
-            </div>
-            <div id="security" data-limit="2" class="bg-red-500 bg-opacity-20 relative col-span-3 bg-red-500 bg-opacity-2">
-              salle de securite
-              <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
-            </div>
-               
-            <div id="pesonnes" data-limit="2"
-              class="relative  row-start-3 col-start-8 col-end-11"
-            >
-              salle du personnes
-              <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
-            </div>
-            <div  id="archifs" data-limit="2"
-              class="relative bg-red-500 bg-opacity-20 col-span-3 col-start-11 row-start-3"
-            >
-              salle d'archives
-                 <button class=" addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
+              Available Workers
+            </h1>
+
+            <div class="worker-list">
+
             </div>
           </div>
+        </div>
 
-
+        <div
+          id="profile-modal"
+          class="flex justify-center items-center w-full h-screen backdrop-blur-sm fixed z-[10] hidden"
+        >
           <div
-            class="row-span-4 bg-orange-200 w-full border-4 rounded-lg text-white border-black flex flex-col text-center items-center gap-6 p-4 lg:col-span-2 lg:order-1 lg:gap-10"
+          id="formulaire"
+            class="flex flex-col h-[95%] justify-around items-center relative gap-4 p-4 w-80 border-2 border-orange-800 rounded-lg bg-orange-400 text-white overflow-y-scroll"
           >
-            <img class="w-40" src="/img/worksphere.png" alt="workspace icon" />
+            <i
+              id="close-profile"
+              class="fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
+            ></i>
 
-            <h4
-              class="font-semibold w-full  bg-orange-400 border-b-2 py-2 m-0 px-4 rounded border-black"
+            <h1
+              class="font-semibold bg-orange-300 w-30 h-20 p-2 border-2 border-orange-200 rounded-md"
             >
-              Unassigned Workers
-            </h4>
+              Profile
+            </h1>
 
-            <button
-              id="addNewWorker"
-              class="border-2 border-black bg-orange-400 font-semibold py-2 w-40 rounded-xl hover:bg-black hover:text-white transition duration-200"
+            <div class="profile">
+
+            </div>
+          </div>
+        </div>
+
+        <main class="">
+          <div
+            class="grid grid-rows-6 w-full h-screen gap-1 lg:grid lg:grid-cols-10 lg:grid-rows-1"
+          >
+            <div
+              class="grid grid-cols-[repeat(13,1fr)] w-full grid-rows-3 row-span-2 bg-[url(/img/plan.jpg)] bg-contain mt-0 bg-no-repeat lg:bg-center lg:col-span-8 lg:order-2"
             >
-              Add New Worker
-            </button>
+              <div id="conference" data-limit="4"
+                class="relative   col-span-5 row-span-1" >
+                salle de conference
+                  <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4  border-black rounded-lg">ADD</button>
+              </div>
+              <div id="reciption" data-limit="6"
+                class="relative bg-red-500 bg-opacity-20 col-span-5 bg-red-500 bg-opacity-20 row-start-2 row-end-4"> 
+                reciption
+                  <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
+              </div>
+              <div id="serveurs" data-limit="2" 
+                class="relative bg-red-500 bg-opacity-20 col-start-8 col-end-11 bg-red-500 bg-opacity-2"
+              >
+                salle de serveures
+                  <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
+              </div>
+              <div id="security" data-limit="2" class="bg-red-500 bg-opacity-20 relative col-span-3 bg-red-500 bg-opacity-2">
+                salle de securite
+                <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
+              </div>
+                
+              <div id="pesonnes" data-limit="2"
+                class="relative  row-start-3 col-start-8 col-end-11"
+              >
+                salle du personnes
+                <button class="addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
+              </div>
+              <div  id="archifs" data-limit="2"
+                class="relative bg-red-500 bg-opacity-20 col-span-3 col-start-11 row-start-3"
+              >
+                salle d'archives
+                  <button class=" addButton absolute top-1 right-1 bg-blue-500 text-white py-2 px-4 border border-black rounded-lg">ADD</button>
+              </div>
+            </div>
+
 
             <div
-              id="listsection"
-              class="border-2 border-black bg-orange-100 w-full h-[400px] rounded-lg p-2 overflow-y-auto">
+              class="row-span-4 bg-orange-200 w-full border-4 rounded-lg text-white border-black flex flex-col text-center items-center gap-6 p-4 lg:col-span-2 lg:order-1 lg:gap-10"
+            >
+              <img class="w-40" src="/img/worksphere.png" alt="workspace icon" />
 
+              <h4
+                class="font-semibold w-full  bg-orange-400 border-b-2 py-2 m-0 px-4 rounded border-black"
+              >
+                Unassigned Workers
+              </h4>
+
+              <button
+                id="addNewWorker"
+                class="border-2 border-black bg-orange-400 font-semibold py-2 w-40 rounded-xl hover:bg-black hover:text-white transition duration-200"
+              >
+                Add New Worker
+              </button>
+
+              <div
+                id="listsection"
+                class="border-2 border-black bg-orange-100 w-full h-[400px] rounded-lg p-2 overflow-y-auto">
+
+              </div>
+            
             </div>
-          
+            </div>
           </div>
-          </div>
-        </div>
-      </main>
-      <script src="/script.js"></script>
-    </body>
-  </html>
+        </main>
+        <script src="/script.js"></script>
+      </body>
+    </html>

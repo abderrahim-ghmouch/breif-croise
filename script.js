@@ -58,29 +58,37 @@ let workers = [  {
   }];
 
 closingButton.addEventListener("click", (e) => {
+
   e.preventDefault();
   formulaire.classList.add("hidden");
 });
 
 canceled.addEventListener("click", (e) => {
   e.preventDefault();
-
+  let profile = document.getElementById("profile")
   formulaire.classList.add("hidden");
   formModal.reset()
+  profile.src="https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
+
 });
 
 document.addEventListener("keydown", (e) => {
   if (e.key == "Escape") {
-    formulaire.classList.add("hidden");
+    let profile = document.getElementById("profile")
+  formulaire.classList.add("hidden");
+  formModal.reset()
+  profile.src="https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
+
   }
 });
 
 formulaire.addEventListener("click",(e)=>{
 if(e.target==formulaire)
   {
-    e.preventDefault()
-    formulaire.classList.add("hidden");
-    formModal.reset()
+   let profile = document.getElementById("profile")
+  formulaire.classList.add("hidden");
+  formModal.reset()
+  profile.src="https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
 
 
   }
@@ -151,7 +159,10 @@ addExp.addEventListener("click", (e) => {
                     type="date"
                 />
               </div>
-            </div>
+              </div>
+              
+              <button type="button" onClick=deleteexp(event) class="w-full items-center border-2 border-green-400 ">delete</button>
+              
           </div>
 
         </div>
@@ -169,7 +180,7 @@ let exptest = [];
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
-
+  let profile = document.getElementById("profile")
   let username = document.getElementById("name");
   let email = document.getElementById("email");
   let phone = document.getElementById("phone");
@@ -244,11 +255,12 @@ submitButton.addEventListener("click", (e) => {
 
   workers.push(employee);
   console.log(workers);
-  formulaire.classList.add("hidden");
-
+  console.log(image)
   addWorkerList(workers)
   formModal.reset()
-
+  profile.src="https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
+  formulaire.classList.add("hidden");
+  
 });
 
 document.getElementById("url").addEventListener("input", (e)=>{
@@ -267,8 +279,10 @@ document.getElementById("url").addEventListener("input", (e)=>{
 
 })
 
+
+
 const listsection =document.getElementById("listsection")
- 
+
 
 function addWorkerList(workers) {
   let filterd = workers.filter(w => w.status === "unassigned")
@@ -277,13 +291,13 @@ function addWorkerList(workers) {
 
   filterd.forEach(worker => {
     listsection.innerHTML += `
-      <div onClick="afficherProfile(${worker.id})" class="bg-orange-200 w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
-        <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
-        <div class="flex flex-col text-black">
-          <h3 class="font-bold text-lg">${worker.name}</h3>
-          <h5 class="text-sm text-gray-700">${worker.role}</h5>
-        </div>
-      </div>
+    <div onClick="afficherProfile(${worker.id})" class="bg-orange-200 w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
+    <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
+    <div class="flex flex-col text-black">
+    <h3 class="font-bold text-lg">${worker.name}</h3>
+    <h5 class="text-sm text-gray-700">${worker.role}</h5>
+    </div>
+    </div>
     `;
   });
 }
@@ -304,20 +318,20 @@ addBtns.forEach(btn => {
     if(availableWorkers.length > 0 ){
       availableWorkers.forEach(worker => {
         list.innerHTML += `
-          <div onClick="addToRoom(${worker.id},'${room}',${limit})" class="bg-orange-200  bg-opacity-40 w-full h-20 border-2 border-orange-200 rounded-md flex items-center gap-6 p-2 mb-2">
-            <img class="border-2 border-orange-200 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
-            <div class="flex flex-col text-black">
-              <h1 class="font-bold text-lg">${worker.name}</h1>
-               <h2 class="text-sm text-gray-700">${worker.role}</h2>
-            </div>
-          </div>
+        <div onClick="addToRoom(${worker.id},'${room}',${limit})" class="bg-orange-200  bg-opacity-40 w-full h-20 border-2 border-orange-200 rounded-md flex items-center gap-6 p-2 mb-2">
+        <img class="border-2 border-orange-200 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
+        <div class="flex flex-col text-black">
+        <h1 class="font-bold text-lg">${worker.name}</h1>
+        <h2 class="text-sm text-gray-700">${worker.role}</h2>
+        </div>
+        </div>
         `;
-       
+        
       });
     }else{
       list.innerHTML = "<p>No Workers</p>"
     }
-
+    
     let closeBtn = document.getElementById("close-list")
     closeBtn.addEventListener("click", ()=>{
       list.innerHTML = ""
@@ -352,30 +366,30 @@ function addToRoom(idWorker, room, limit){
   if(count < limit){
     let worker = workers.find(w => w.id === idWorker);
     worker.status = room;
-
+    
     let div = document.createElement("div")
     div.id = `worker-${worker.id}`
     div.className = "bg-white w-60 h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2 relative"
-
+    
     div.innerHTML = `
     <i
-        class="remove-from-room fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
-      ></i>
+    class="remove-from-room fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
+    ></i>
     <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
-          <div class="flex flex-col text-black">
-            <h1 class="font-bold text-lg">${worker.name}</h1>
-            <h2 class="text-sm text-gray-700">${worker.role}</h2>
-          </div>`
-          container.classList.remove("bg-red-500","bg-opacity-20");
-
-         
-
+    <div class="flex flex-col text-black">
+    <h1 class="font-bold text-lg">${worker.name}</h1>
+    <h2 class="text-sm text-gray-700">${worker.role}</h2>
+    </div>`
+    container.classList.remove("bg-red-500","bg-opacity-20");
+    
+    
+    
     div.addEventListener("click", ()=>{
       afficherProfile(idWorker)
-    
+      
     })
-
-
+    
+    
     let removeBtn = div.querySelector(".remove-from-room");
     removeBtn.addEventListener("click", e => {
       e.stopPropagation();
@@ -383,49 +397,65 @@ function addToRoom(idWorker, room, limit){
       div.remove()
       addWorkerList(workers);
       
-             if(container.children.length==1)
-                  {
-                     container.classList.add("bg-red-500","bg-opacity-20");
-                  }
-    })
+      if(container.children.length==1)
+        {
+          container.classList.add("bg-red-500","bg-opacity-20");
+        }
+      })
+      
+      container.appendChild(div);
+      
+      addWorkerList(workers);
+    }else{
+      alert("Room Is Full");
+    }
     
-    container.appendChild(div);
     
-    addWorkerList(workers);
-  }else{
-    alert("Room Is Full");
+    let modal = document.getElementById("availableWorkers");
+    modal.classList.add("hidden");
+    let list = modal.querySelector(".worker-list");
+    list.innerHTML = "";
+    
   }
-
-
-  let modal = document.getElementById("availableWorkers");
-  modal.classList.add("hidden");
-  let list = modal.querySelector(".worker-list");
-  list.innerHTML = "";
-
-}
-
-function afficherProfile(idWorker){
-  let worker = workers.find(w => w.id === idWorker);
-  let modal = document.getElementById('profile-modal');
+  
+  function afficherProfile(idWorker){
+    let worker = workers.find(w => w.id === idWorker);
+    let modal = document.getElementById('profile-modal');
   modal.classList.remove("hidden")
- 
-
+  
+  
   let profile = modal.querySelector('.profile');
   
   profile.innerHTML = `
-      <div class="bg-white w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
-            <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
-            <div class="flex flex-col text-black">
-              <h1 class="font-bold text-lg">${worker.name}</h1>
-              <h2 class="text-sm text-gray-700">${worker.role}</h2>
-            </div>
-          </div>
+  <div class="bg-white w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
+  <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
+  <div class="flex flex-col text-black">
+  <h1 class="font-bold text-lg">${worker.name}</h1>
+  <h2 class="text-sm text-gray-700">${worker.role}</h2>
+  </div>
+  </div>
   `
   let closeBtn = document.getElementById("close-profile")
-    closeBtn.addEventListener("click", ()=>{
-      profile.innerHTML = ""
-      modal.classList.add("hidden");
-    })
+  closeBtn.addEventListener("click", ()=>{
+    profile.innerHTML = ""
+    modal.classList.add("hidden");
+  })
+}
+
+function deleteexp(e) {
+e.preventDefault()
+
+e.target.parentElement.remove()
 }
 
 
+
+// experienceForms.addEventListener("click",(e)=>{
+//  e.preventDefault()
+//   if(e.target && e.target.id =="subEXP")
+//     { 
+     
+//       let expForm = document.getElementById("expForm")
+//       expForm.closest.remove()
+//     }
+// })
