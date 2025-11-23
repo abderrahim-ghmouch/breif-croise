@@ -8,7 +8,7 @@ let role = document.getElementById("role");
 
 let url = document.getElementById("url");
 
-let formModal = document.getElementById("formulaire")
+let formModal = document.getElementById("formulaire");
 
 let addExp = document.getElementById("expButton");
 
@@ -20,7 +20,8 @@ let allworkerData = [];
 
 let worker;
 
-let workers = [  {
+let workers = [
+  {
     id: 101234,
     name: "Sarah Johnson",
     email: "sarah.johnson@example.com",
@@ -28,7 +29,12 @@ let workers = [  {
     role: "Receptionist",
     image: "/img/user1.png",
     experiences: [
-      { company: "Hotel Atlas", job: "Front Desk", start: "2021-02", end: "2023-01" }
+      {
+        company: "Hotel Atlas",
+        job: "Front Desk",
+        start: "2021-02",
+        end: "2023-01",
+      },
     ],
     status: "unassigned",
   },
@@ -40,60 +46,68 @@ let workers = [  {
     role: "IT Technician",
     image: "/img/user2.png",
     experiences: [
-      { company: "Maroc Telecom", job: "Tech Support", start: "2020-01", end: "2022-08" }
+      {
+        company: "Maroc Telecom",
+        job: "Tech Support",
+        start: "2020-01",
+        end: "2022-08",
+      },
     ],
     status: "unassigned",
   },
-{
+  {
     id: 101238,
     name: "cristiano",
     email: "georgina@example.com",
     phone: "0654321876",
     role: "Cleaning Staff",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmkPMfqHKjGC-fIVOlf2rsZRaXM7TZVLylhQ&s",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmkPMfqHKjGC-fIVOlf2rsZRaXM7TZVLylhQ&s",
     experiences: [
-      { company: "Maroc Telecom", job: "Tech Support", start: "2020-01", end: "2022-08" }
+      {
+        company: "Maroc Telecom",
+        job: "Tech Support",
+        start: "2020-01",
+        end: "2022-08",
+      },
     ],
     status: "unassigned",
-  }];
+  },
+];
 
 closingButton.addEventListener("click", (e) => {
-
   e.preventDefault();
   formulaire.classList.add("hidden");
 });
 
 canceled.addEventListener("click", (e) => {
   e.preventDefault();
-  let profile = document.getElementById("profile")
+  let profile = document.getElementById("profile");
   formulaire.classList.add("hidden");
-  formModal.reset()
-  profile.src="https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
-
+  formModal.reset();
+  profile.src =
+    "https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
 });
 
 document.addEventListener("keydown", (e) => {
   if (e.key == "Escape") {
-    let profile = document.getElementById("profile")
-  formulaire.classList.add("hidden");
-  formModal.reset()
-  profile.src="https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
-
+    let profile = document.getElementById("profile");
+    formulaire.classList.add("hidden");
+    formModal.reset();
+    profile.src =
+      "https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
   }
 });
 
-formulaire.addEventListener("click",(e)=>{
-if(e.target==formulaire)
-  {
-   let profile = document.getElementById("profile")
-  formulaire.classList.add("hidden");
-  formModal.reset()
-  profile.src="https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
-
-
+formulaire.addEventListener("click", (e) => {
+  if (e.target == formulaire) {
+    let profile = document.getElementById("profile");
+    formulaire.classList.add("hidden");
+    formModal.reset();
+    profile.src =
+      "https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
   }
-})
-
+});
 
 newWorker.addEventListener("click", () => {
   formulaire.classList.remove("hidden");
@@ -180,7 +194,7 @@ let exptest = [];
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
-  let profile = document.getElementById("profile")
+  let profile = document.getElementById("profile");
   let username = document.getElementById("name");
   let email = document.getElementById("email");
   let phone = document.getElementById("phone");
@@ -215,17 +229,33 @@ submitButton.addEventListener("click", (e) => {
 
     let companyRegex = /^[A-Za-z0-9&.,'’\- ]{2,50}$/;
     let jobRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
-  
+    let startCheck = startDate.value;
+    let endCheck = endDate.value;
 
     if (!companyRegex.test(company.value.trim())) {
       company.focus();
       return;
     }
-
+    
     if (!jobRegex.test(job.value.trim())) {
       job.focus();
       return;
     }
+
+if (!startDate.value || !endDate.value) {
+  alert("Please select both start and end dates.");
+  startDate.focus();
+  return;
+}
+
+
+
+    if(new Date(startCheck) > new Date(endCheck))
+      { 
+        alert("start dat should be before end date.");
+        startDate.focus()
+    return
+      }
 
     let expObj = {
       company: company.value.trim(),
@@ -250,48 +280,45 @@ submitButton.addEventListener("click", (e) => {
     role: role.value,
     image: image.value,
     experiences: experiencesList,
-    status: "unassigned"
+    status: "unassigned",
   };
 
   workers.push(employee);
   console.log(workers);
-  console.log(image)
-  addWorkerList(workers)
-  formModal.reset()
-  profile.src="https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
+  console.log(image);
+  addWorkerList(workers);
+  formModal.reset();
+  profile.src =
+    "https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
   formulaire.classList.add("hidden");
-  
 });
 
-document.getElementById("url").addEventListener("input", (e)=>{
-  let profile = document.getElementById("profile")
+document.getElementById("url").addEventListener("input", (e) => {
+  let profile = document.getElementById("profile");
   let tempImg = new Image();
 
   tempImg.src = e.target.value;
 
-  tempImg.onload = ()=>{
+  tempImg.onload = () => {
     profile.src = e.target.value;
-  }
+  };
 
-  tempImg.onerror = ()=>{
-    profile.src = "https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
-  }
+  tempImg.onerror = () => {
+    profile.src =
+      "https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
+  };
+});
 
-})
-
-
-
-const listsection =document.getElementById("listsection")
-
+const listsection = document.getElementById("listsection");
 
 function addWorkerList(workers) {
-  let filterd = workers.filter(w => w.status === "unassigned")
+  let filterd = workers.filter((w) => w.status === "unassigned");
 
   listsection.innerHTML = "";
 
-  filterd.forEach(worker => {
+  filterd.forEach((worker) => {
     listsection.innerHTML += `
-    <div onClick="afficherProfile(${worker.id})" class="bg-orange-200 w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
+    <div onClick="afficherProfile(${worker.id})" class="bg-orange-400 bg-opacity-20 shoadow-md shadow-red-600 w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
     <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
     <div class="flex flex-col text-black">
     <h3 class="font-bold text-lg">${worker.name}</h3>
@@ -302,21 +329,20 @@ function addWorkerList(workers) {
   });
 }
 
-addWorkerList(workers)
+addWorkerList(workers);
 
+let addBtns = document.querySelectorAll(".addButton");
 
-let addBtns = document.querySelectorAll(".addButton")
-
-addBtns.forEach(btn => {
-  btn.addEventListener("click", ()=>{
+addBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
     let room = btn.parentElement.id;
     let limit = btn.parentElement.dataset.limit;
     let availableWorkers = filterWorkers(room);
     let modal = document.getElementById("availableWorkers");
     modal.classList.remove("hidden");
-    let list = modal.querySelector(".worker-list")
-    if(availableWorkers.length > 0 ){
-      availableWorkers.forEach(worker => {
+    let list = modal.querySelector(".worker-list");
+    if (availableWorkers.length > 0) {
+      availableWorkers.forEach((worker) => {
         list.innerHTML += `
         <div onClick="addToRoom(${worker.id},'${room}',${limit})" class="bg-orange-200  bg-opacity-40 w-full h-20 border-2 border-orange-200 rounded-md flex items-center gap-6 p-2 mb-2">
         <img class="border-2 border-orange-200 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
@@ -326,51 +352,70 @@ addBtns.forEach(btn => {
         </div>
         </div>
         `;
-        
       });
-    }else{
-      list.innerHTML = "<p>No Workers</p>"
+    } else {
+      list.innerHTML = "<p>No Workers</p>";
     }
-    
-    let closeBtn = document.getElementById("close-list")
-    closeBtn.addEventListener("click", ()=>{
-      list.innerHTML = ""
+
+    let closeBtn = document.getElementById("close-list");
+    closeBtn.addEventListener("click", () => {
+      list.innerHTML = "";
       modal.classList.add("hidden");
-    })
-  })
-})
+    });
+  });
+});
 
-
-function filterWorkers(room){
-  let filtred = []
-  if(room === "conference"){
-    filtred = workers.filter(w => w.status === "unassigned")
-  }else if (room === "reciption"){
-    filtred = workers.filter(w => (w.role === "Receptionist" || w.role === "Manager" || w.role === "Cleaning Staff" ) && w.status === "unassigned")
-  }else if (room === "serveurs"){
-    filtred = workers.filter(w => (w.role === "IT Technician" || w.role === "Manager" || w.role === "Cleaning Staff" ) && w.status === "unassigned")
-  }else if (room === "security"){
-    filtred = workers.filter(w => (w.role === "Security Agent" || w.role === "Manager" || w.role === "Cleaning Staff" ) && w.status === "unassigned")
-  }else if (room === "pesonnes"){
-    filtred = workers.filter(w => w.status === "unassigned")
-  }else if (room === "archifs"){
-    filtred = workers.filter(w => w.role === "Manager" && w.status === "unassigned")
+function filterWorkers(room) {
+  let filtred = [];
+  if (room === "conference") {
+    filtred = workers.filter((w) => w.status === "unassigned");
+  } else if (room === "reciption") {
+    filtred = workers.filter(
+      (w) =>
+        (w.role === "Receptionist" ||
+          w.role === "Manager" ||
+          w.role === "Cleaning Staff") &&
+        w.status === "unassigned"
+    );
+  } else if (room === "serveurs") {
+    filtred = workers.filter(
+      (w) =>
+        (w.role === "IT Technician" ||
+          w.role === "Manager" ||
+          w.role === "Cleaning Staff") &&
+        w.status === "unassigned"
+    );
+  } else if (room === "security") {
+    filtred = workers.filter(
+      (w) =>
+        (w.role === "Security Agent" ||
+          w.role === "Manager" ||
+          w.role === "Cleaning Staff") &&
+        w.status === "unassigned"
+    );
+  } else if (room === "pesonnes") {
+    filtred = workers.filter((w) => w.status === "unassigned");
+  } else if (room === "archifs") {
+    filtred = workers.filter(
+      (w) => w.role === "Manager" && w.status === "unassigned"
+    );
   }
-  return filtred
+  return filtred;
 }
 
-function addToRoom(idWorker, room, limit){
-  let container =  document.getElementById(room);
-  let count = container.children.length - 1
+function addToRoom(idWorker, room, limit) {
+  let container = document.getElementById(room);
+  let count = container.children.length - 1;
 
-  if(count < limit){
-    let worker = workers.find(w => w.id === idWorker);
+  if (count < limit) {
+    let worker = workers.find((w) => w.id === idWorker);
     worker.status = room;
-    
-    let div = document.createElement("div")
-    div.id = `worker-${worker.id}`
-    div.className = "bg-white w-60 h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2 relative"
-    
+
+    let div = document.createElement("div");
+    div.id = `worker-${worker.id}`;
+    div.className =
+      "bg-white w-60 h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2 relative";
+
     div.innerHTML = `
     <i
     class="remove-from-room fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
@@ -379,53 +424,45 @@ function addToRoom(idWorker, room, limit){
     <div class="flex flex-col text-black">
     <h1 class="font-bold text-lg">${worker.name}</h1>
     <h2 class="text-sm text-gray-700">${worker.role}</h2>
-    </div>`
-    container.classList.remove("bg-red-500","bg-opacity-20");
-    
-    
-    
-    div.addEventListener("click", ()=>{
-      afficherProfile(idWorker)
-      
-    })
-    
-    
+    </div>`;
+    container.classList.remove("bg-red-500", "bg-opacity-20");
+
+    div.addEventListener("click", () => {
+      afficherProfile(idWorker);
+    });
+
     let removeBtn = div.querySelector(".remove-from-room");
-    removeBtn.addEventListener("click", e => {
+    removeBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      worker.status = "unassigned"
-      div.remove()
+      worker.status = "unassigned";
+      div.remove();
       addWorkerList(workers);
-      
-      if(container.children.length==1)
-        {
-          container.classList.add("bg-red-500","bg-opacity-20");
-        }
-      })
-      
-      container.appendChild(div);
-      
-      addWorkerList(workers);
-    }else{
-      alert("Room Is Full");
-    }
-    
-    
-    let modal = document.getElementById("availableWorkers");
-    modal.classList.add("hidden");
-    let list = modal.querySelector(".worker-list");
-    list.innerHTML = "";
-    
+
+      if (container.children.length == 1) {
+        container.classList.add("bg-red-500", "bg-opacity-20");
+      }
+    });
+
+    container.appendChild(div);
+
+    addWorkerList(workers);
+  } else {
+    alert("Room Is Full");
   }
-  
-  function afficherProfile(idWorker){
-    let worker = workers.find(w => w.id === idWorker);
-    let modal = document.getElementById('profile-modal');
-  modal.classList.remove("hidden")
-  
-  
-  let profile = modal.querySelector('.profile');
-  
+
+  let modal = document.getElementById("availableWorkers");
+  modal.classList.add("hidden");
+  let list = modal.querySelector(".worker-list");
+  list.innerHTML = "";
+}
+
+function afficherProfile(idWorker) {
+  let worker = workers.find((w) => w.id === idWorker);
+  let modal = document.getElementById("profile-modal");
+  modal.classList.remove("hidden");
+
+  let profile = modal.querySelector(".profile");
+
   profile.innerHTML = `
   <div class="bg-white w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
   <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
@@ -434,27 +471,25 @@ function addToRoom(idWorker, room, limit){
   <h2 class="text-sm text-gray-700">${worker.role}</h2>
   </div>
   </div>
-  `
-  let closeBtn = document.getElementById("close-profile")
-  closeBtn.addEventListener("click", ()=>{
-    profile.innerHTML = ""
+  `;
+  let closeBtn = document.getElementById("close-profile");
+  closeBtn.addEventListener("click", () => {
+    profile.innerHTML = "";
     modal.classList.add("hidden");
-  })
+  });
 }
 
 function deleteexp(e) {
-e.preventDefault()
+  e.preventDefault();
 
-e.target.parentElement.remove()
+  e.target.parentElement.remove();
 }
-
-
 
 // experienceForms.addEventListener("click",(e)=>{
 //  e.preventDefault()
 //   if(e.target && e.target.id =="subEXP")
-//     { 
-     
+//     {
+
 //       let expForm = document.getElementById("expForm")
 //       expForm.closest.remove()
 //     }
