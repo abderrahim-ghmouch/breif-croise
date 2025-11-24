@@ -462,16 +462,39 @@ function afficherProfile(idWorker) {
   modal.classList.remove("hidden");
 
   let profile = modal.querySelector(".profile");
+profile.innerHTML = `
+  <div class="bg-green-600 bg-opacity-40 w-full border rounded-2xl shadow-sm p-4 space-y-4">
+    <div class="flex items-center gap-4">
+      <img 
+        class="w-16 h-16 rounded-xl object-cover border" 
+        src="${worker.image}" 
+        alt="Profile picture"
+      >
+      
+      <div class="flex flex-col">
+        <h1 class="font-semibold text-xl text-gray-900">${worker.name}</h1>
+        <p class="text-sm text-gray-600">${worker.role}</p>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-lg font-semibold text-gray-900 mb-2">Experiences</h2>
 
-  profile.innerHTML = `
-  <div class="bg-white w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
-  <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
-  <div class="flex flex-col text-black">
-  <h1 class="font-bold text-lg">${worker.name}</h1>
-  <h2 class="text-sm text-gray-700">${worker.role}</h2>
+      <div class="space-y-2">
+        ${worker.experiences && worker.experiences.length > 0 
+          ? worker.experiences.map(exp => `
+              <div class="border rounded-xl p-3 bg-gray-50">
+                <p class="text-sm font-semibold text-gray-800">${exp.company}</p>
+                <p class="text-sm text-gray-600">${exp.job}</p>
+                <p class="text-xs text-gray-500">${exp.start} → ${exp.end}</p>
+              </div>
+            `).join('')
+          : `<p class="text-sm text-gray-500">No experience added.</p>`
+        }
+      </div>
+    </div>
+
   </div>
-  </div>
-  `;
+`;
   let closeBtn = document.getElementById("close-profile");
   closeBtn.addEventListener("click", () => {
     profile.innerHTML = "";
@@ -485,12 +508,3 @@ function deleteexp(e) {
   e.target.parentElement.remove();
 }
 
-// experienceForms.addEventListener("click",(e)=>{
-//  e.preventDefault()
-//   if(e.target && e.target.id =="subEXP")
-//     {
-
-//       let expForm = document.getElementById("expForm")
-//       expForm.closest.remove()
-//     }
-// })
