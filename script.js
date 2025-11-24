@@ -318,10 +318,10 @@ function addWorkerList(workers) {
 
   filterd.forEach((worker) => {
     listsection.innerHTML += `
-    <div onClick="afficherProfile(${worker.id})" class="bg-orange-400 bg-opacity-20 shoadow-md shadow-red-600 w-full h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2">
-    <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
-    <div class="flex flex-col text-black">
-    <h3 class="font-bold text-lg">${worker.name}</h3>
+    <div onClick="afficherProfile(${worker.id})" class="bg-orange-200 bg-opacity-80 shoadow-md w-full h-20 border-2 rounded-lg green-400 border-orange-500 flex items-center gap-2 p-1 mb-1">
+    
+    <div class="flex flex-col ">
+    <h3 class="font-bold text-lg text-black ">${worker.name}</h3>
     <h5 class="text-sm text-gray-700">${worker.role}</h5>
     </div>
     </div>
