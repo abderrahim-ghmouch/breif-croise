@@ -22,58 +22,250 @@ let worker;
 
 let workers = [
   {
-    id: 101234,
+    id: 1,
     name: "Sarah Johnson",
     email: "sarah.johnson@example.com",
-    phone: "0612345678",
-    role: "Receptionist",
-    image: "/img/user1.png",
+    phone: "+212 645-112233",
+    role: "Manager",
+    image: "https://randomuser.me/api/portraits/women/12.jpg",
     experiences: [
-      {
-        company: "Hotel Atlas",
-        job: "Front Desk",
-        start: "2021-02",
-        end: "2023-01",
-      },
+      { company: "TechCorp", job: "Team Lead", start: "2019-01-10", end: "2022-07-15" },
+      { company: "BizWorld", job: "Supervisor", start: "2016-03-01", end: "2018-12-20" }
     ],
-    status: "unassigned",
+    status: "unassigned"
   },
   {
-    id: 101235,
-    name: "test tree",
-    email: "ahmed.fassi@example.com",
-    phone: "0654321876",
+    id: 2,
+    name: "Michael Smith",
+    email: "m.smith@example.com",
+    phone: "+212 612-334455",
     role: "IT Technician",
-    image: "/img/user2.png",
+    image: "https://randomuser.me/api/portraits/men/43.jpg",
     experiences: [
-      {
-        company: "Maroc Telecom",
-        job: "Tech Support",
-        start: "2020-01",
-        end: "2022-08",
-      },
+      { company: "NetSolutions", job: "IT Support", start: "2020-05-03", end: "2023-01-11" }
     ],
-    status: "unassigned",
+    status: "unassigned"
   },
   {
-    id: 101238,
-    name: "cristiano",
-    email: "georgina@example.com",
-    phone: "0654321876",
-    role: "Cleaning Staff",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmkPMfqHKjGC-fIVOlf2rsZRaXM7TZVLylhQ&s",
+    id: 3,
+    name: "Emily Davis",
+    email: "emily.davis@example.com",
+    phone: "+212 699-221144",
+    role: "Receptionist",
+    image: "https://randomuser.me/api/portraits/women/55.jpg",
     experiences: [
-      {
-        company: "Maroc Telecom",
-        job: "Tech Support",
-        start: "2020-01",
-        end: "2022-08",
-      },
+      { company: "HotelMax", job: "Front Desk", start: "2018-04-10", end: "2022-10-05" }
     ],
-    status: "unassigned",
+    status: "unassigned"
   },
+  {
+    id: 4,
+    name: "Ahmed Benali",
+    email: "ahmed.benali@example.com",
+    phone: "+212 661-778899",
+    role: "Security Agent",
+    image: "https://randomuser.me/api/portraits/men/2.jpg",
+    experiences: [
+      { company: "SafeGuard", job: "Security", start: "2017-09-01", end: "2023-03-20" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 5,
+    name: "Jessica Lee",
+    email: "jessica.lee@example.com",
+    phone: "+212 623-990011",
+    role: "Cleaning Staff",
+    image: "https://randomuser.me/api/portraits/women/30.jpg",
+    experiences: [
+      { company: "CleanPro", job: "Cleaner", start: "2020-01-01", end: "2023-08-10" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 6,
+    name: "David Thompson",
+    email: "david.thompson@example.com",
+    phone: "+212 650-550099",
+    role: "Manager",
+    image: "https://randomuser.me/api/portraits/men/51.jpg",
+    experiences: [
+      { company: "WorkSphere", job: "Assistant Manager", start: "2018-11-15", end: "2021-04-01" },
+      { company: "ProOffice", job: "Manager", start: "2021-04-15", end: "2024-01-12" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 7,
+    name: "Nadia Amrani",
+    email: "nadia.amrani@example.com",
+    phone: "+212 621-773344",
+    role: "Receptionist",
+    image: "https://randomuser.me/api/portraits/women/61.jpg",
+    experiences: [
+      { company: "Morocco Suites", job: "Receptionist", start: "2019-02-01", end: "2023-05-01" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 8,
+    name: "Omar Rami",
+    email: "omar.rami@example.com",
+    phone: "+212 677-889900",
+    role: "IT Technician",
+    image: "https://randomuser.me/api/portraits/men/27.jpg",
+    experiences: [
+      { company: "ITZone", job: "Hardware Tech", start: "2016-06-10", end: "2020-09-03" },
+      { company: "TechLine", job: "Network Tech", start: "2020-10-01", end: "2023-12-15" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 9,
+    name: "Linda Brooks",
+    email: "linda.brooks@example.com",
+    phone: "+212 633-112255",
+    role: "Cleaning Staff",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    experiences: [
+      { company: "EcoClean", job: "Cleaner", start: "2017-03-04", end: "2022-11-02" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 10,
+    name: "John Carter",
+    email: "john.carter@example.com",
+    phone: "+212 688-443322",
+    role: "Security Agent",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
+    experiences: [
+      { company: "SecureNow", job: "Guard", start: "2015-09-01", end: "2023-06-10" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 11,
+    name: "Amina El Idrissi",
+    email: "amina.idrissi@example.com",
+    phone: "+212 601-932244",
+    role: "Receptionist",
+    image: "https://randomuser.me/api/portraits/women/15.jpg",
+    experiences: [
+      { company: "Royal Hotel", job: "Front Desk Agent", start: "2019-05-21", end: "2024-01-10" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 12,
+    name: "Zakaria Lafi",
+    email: "zakaria.lafi@example.com",
+    phone: "+212 670-229988",
+    role: "IT Technician",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
+    experiences: [
+      { company: "MarocTech", job: "Technician", start: "2018-07-14", end: "2022-09-10" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 13,
+    name: "Anna Martinez",
+    email: "anna.martinez@example.com",
+    phone: "+212 699-122377",
+    role: "Manager",
+    image: "https://randomuser.me/api/portraits/women/8.jpg",
+    experiences: [
+      { company: "BusinessPro", job: "Office Manager", start: "2017-04-10", end: "2023-02-01" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 14,
+    name: "James Walker",
+    email: "james.walker@example.com",
+    phone: "+212 620-988776",
+    role: "Security Agent",
+    image: "https://randomuser.me/api/portraits/men/12.jpg",
+    experiences: [
+      { company: "SuperGuard", job: "Security Specialist", start: "2016-11-10", end: "2023-09-11" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 15,
+    name: "Karima Saidi",
+    email: "karima.saidi@example.com",
+    phone: "+212 678-113355",
+    role: "Cleaning Staff",
+    image: "https://randomuser.me/api/portraits/women/52.jpg",
+    experiences: [
+      { company: "CleanIt", job: "Cleaner", start: "2018-03-01", end: "2023-04-15" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 16,
+    name: "William Turner",
+    email: "will.turner@example.com",
+    phone: "+212 665-556677",
+    role: "IT Technician",
+    image: "https://randomuser.me/api/portraits/men/39.jpg",
+    experiences: [
+      { company: "TechHub", job: "System Technician", start: "2021-01-01", end: "2024-01-01" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 17,
+    name: "Chloé Laurent",
+    email: "chloe.laurent@example.com",
+    phone: "+212 698-331177",
+    role: "Receptionist",
+    image: "https://randomuser.me/api/portraits/women/7.jpg",
+    experiences: [
+      { company: "OfficePoint", job: "Reception Agent", start: "2019-07-20", end: "2023-12-04" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 18,
+    name: "Soufiane Fathi",
+    email: "soufiane.fathi@example.com",
+    phone: "+212 622-709910",
+    role: "Security Agent",
+    image: "https://randomuser.me/api/portraits/men/19.jpg",
+    experiences: [
+      { company: "ProtectionPro", job: "Guard", start: "2016-02-10", end: "2022-08-08" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 19,
+    name: "Maria Santos",
+    email: "maria.santos@example.com",
+    phone: "+212 677-558899",
+    role: "Manager",
+    image: "https://randomuser.me/api/portraits/women/40.jpg",
+    experiences: [
+      { company: "CorpLine", job: "Team Manager", start: "2015-10-01", end: "2023-01-20" }
+    ],
+    status: "unassigned"
+  },
+  {
+    id: 20,
+    name: "Henry Lewis",
+    email: "henry.lewis@example.com",
+    phone: "+212 661-200144",
+    role: "Cleaning Staff",
+    image: "https://randomuser.me/api/portraits/men/25.jpg",
+    experiences: [
+      { company: "ShineCo", job: "Cleaner", start: "2017-12-10", end: "2023-05-11" }
+    ],
+    status: "unassigned"
+  }
 ];
+
 
 closingButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -318,18 +510,32 @@ function addWorkerList(workers) {
 
   filterd.forEach((worker) => {
     listsection.innerHTML += `
-    <div onClick="afficherProfile(${worker.id})" class="bg-orange-200 bg-opacity-80 shoadow-md w-full h-20 border-2 rounded-lg green-400 border-orange-500 flex items-center gap-2 p-1 mb-1">
-    <div class="border-2 h-20 w-20"<img src = "${worker.image}"></div>
-    <div class="flex flex-col ">
-    <h3 class="font-bold text-lg text-black ">${worker.name}</h3>
-    <h5 class="text-sm text-gray-700">${worker.role}</h5>
-    </div>
-    </div>
+ <div data-id="${worker.id}" onclick="afficherProfile(${worker.id})"
+  class="bg-yellow-200 bg-opacity-40 shadow-2xl w-full border-2 rounded-md flex items-center gap-3 p-3 mb-2">
+
+  
+  <div class="w-16 h-16 sm:w-12 sm:h-12 flex-shrink-0">
+    <img class="w-full h-full object-cover rounded-md" src="${worker.image}">
+  </div>
+
+
+  <div class="flex flex-col overflow-hidden">
+    <h3 class="text-lg sm:text-md font-bold text-black truncate">
+      ${worker.name}
+    </h3>
+    <h5 class="text-sm text-gray-600 truncate">
+      ${worker.role}
+    </h5>
+  </div>
+
+</div>
     `;
   });
 }
 
 addWorkerList(workers);
+
+
 
 let addBtns = document.querySelectorAll(".addButton");
 
@@ -414,16 +620,14 @@ function addToRoom(idWorker, room, limit) {
     let div = document.createElement("div");
     div.id = `worker-${worker.id}`;
     div.className =
-      "bg-white w-60 h-20 border-2 rounded-lg flex items-center gap-3 p-2 mb-2 relative";
+      "bg-white w-20 h-20 border-2 rounded-lg flex items-center";
 
     div.innerHTML = `
     <i
     class="remove-from-room fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
     ></i>
-    <img class="border-2 rounded-lg w-14 h-14 object-cover" src="${worker.image}">
-    <div class="flex flex-col text-black">
-    <h1 class="font-bold text-lg">${worker.name}</h1>
-    <h2 class="text-sm text-gray-700">${worker.role}</h2>
+    <img class="border-2 rounded-full w-14 h-14 object-cover" src="${worker.image}">
+    
     </div>`;
     container.classList.remove("bg-red-500", "bg-opacity-20");
 
@@ -463,17 +667,24 @@ function afficherProfile(idWorker) {
 
   let profile = modal.querySelector(".profile");
 profile.innerHTML = `
-  <div class="bg-green-600 bg-opacity-40 w-full border rounded-2xl shadow-sm p-4 space-y-4">
-    <div class="flex items-center gap-4">
+  <div class="bg-orange-400 bg-opacity-20 w-full  rounded-2xl shadow-sm p-4 space-y-4">
+    <div class="flex flex-col items-center gap-4">
       <img 
         class="w-16 h-16 rounded-xl object-cover border" 
         src="${worker.image}" 
         alt="Profile picture"
       >
       
-      <div class="flex flex-col">
+      <div class="flex flex-col justif-center items-center">
         <h1 class="font-semibold text-xl text-gray-900">${worker.name}</h1>
         <p class="text-sm text-gray-600">${worker.role}</p>
+
+      </div>
+      <div class="flex flex-col">
+      
+      <div>phone:${worker.phone}</div>
+      <div>email:${worker.email}</div>
+      
       </div>
     </div>
     <div>
