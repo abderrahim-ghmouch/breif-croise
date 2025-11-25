@@ -102,7 +102,7 @@ document.addEventListener("keydown", (e) => {
 formulaire.addEventListener("click", (e) => {
   if (e.target == formulaire) {
     let profile = document.getElementById("profile");
-    formulaire.classList.add("hidden");
+    // formulaire.classList.add("hidden");
     formModal.reset();
     profile.src =
       "https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
@@ -175,7 +175,7 @@ addExp.addEventListener("click", (e) => {
               </div>
               </div>
               
-              <button type="button" onClick=deleteexp(event) class="w-full items-center border-2 border-green-400 ">delete</button>
+              <button type="button" onClick=deleteexp(event) class="w-full items-center border-2 border-green-800 ">delete</button>
               
           </div>
 
@@ -319,7 +319,7 @@ function addWorkerList(workers) {
   filterd.forEach((worker) => {
     listsection.innerHTML += `
     <div onClick="afficherProfile(${worker.id})" class="bg-orange-200 bg-opacity-80 shoadow-md w-full h-20 border-2 rounded-lg green-400 border-orange-500 flex items-center gap-2 p-1 mb-1">
-    
+    <div class="border-2 h-20 w-20"<img src = "${worker.image}"></div>
     <div class="flex flex-col ">
     <h3 class="font-bold text-lg text-black ">${worker.name}</h3>
     <h5 class="text-sm text-gray-700">${worker.role}</h5>
@@ -447,7 +447,7 @@ function addToRoom(idWorker, room, limit) {
 
     addWorkerList(workers);
   } else {
-    alert("Room Is Full");
+    toasts("Room Is Full");
   }
 
   let modal = document.getElementById("availableWorkers");
