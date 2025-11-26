@@ -277,6 +277,12 @@ canceled.addEventListener("click", (e) => {
   let profile = document.getElementById("profile");
   formulaire.classList.add("hidden");
   formModal.reset();
+
+let deleteExp=document.querySelectorAll(".deleteExp")
+
+deleteExp.forEach((e)=>e.click())
+
+
   profile.src =
     "https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
 });
@@ -296,6 +302,8 @@ formulaire.addEventListener("click", (e) => {
     let profile = document.getElementById("profile");
     // formulaire.classList.add("hidden");
     formModal.reset();
+
+
     profile.src =
       "https://media.istockphoto.com/id/517998264/vector/male-user-icon.jpg?s=612x612&w=0&k=20&c=4RMhqIXcJMcFkRJPq6K8h7ozuUoZhPwKniEke6KYa_k=";
   }
@@ -367,7 +375,7 @@ addExp.addEventListener("click", (e) => {
               </div>
               </div>
               
-              <button type="button" onClick=deleteexp(event) class="w-full items-center border-2 border-green-800 ">delete</button>
+              <button type="button" onClick="deleteexp(event)" class="deleteExp w-full items-center border-2 border-green-800 ">delete</button>
               
           </div>
 
@@ -375,6 +383,13 @@ addExp.addEventListener("click", (e) => {
     `
   );
 });
+
+function deleteexp(e) {
+      e.preventDefault();
+    
+      e.target.parentElement.remove();
+    }
+
 
 let submitButton = document.getElementById("submiting");
 
@@ -625,7 +640,7 @@ function addToRoom(idWorker, room, limit) {
     div.innerHTML = `<div class="flex">
     
     <i
-    class="remove-from-room fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
+    class="remove-from-room fa-solid fa-xmark relative left-3 top-0 h-5 right-4 hover:cursor-pointer hover:text-black"
     ></i>
     <img style="width: 60%; height: 60%;" class="border-2 rounded-full object-cover" src="${worker.image}">
     
@@ -633,7 +648,6 @@ function addToRoom(idWorker, room, limit) {
     </div>
     `;
     container.classList.remove("bg-red-500", "bg-opacity-20");
-
     div.addEventListener("click", () => {
       afficherProfile(idWorker);
     });
@@ -654,7 +668,7 @@ function addToRoom(idWorker, room, limit) {
 
     addWorkerList(workers);
   } else {
-    toasts("Room Is Full");
+    alert("Room Is Full");
   }
 
   let modal = document.getElementById("availableWorkers");
@@ -716,16 +730,3 @@ profile.innerHTML = `
   });
 }
 
-function deleteexp(e) {
-  e.preventDefault();
-
-  e.target.parentElement.remove();
-}
-
-workers.forEach((e)=>{
-let serveurs=documen.getElementById("serveures")
-        if(e.status==="conference")
-        {e.status="serveurs"
-         serveurs.addToroom(e)
-        }
-})
