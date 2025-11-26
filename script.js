@@ -375,7 +375,7 @@ addExp.addEventListener("click", (e) => {
               </div>
               </div>
               
-              <button type="button" onClick="deleteexp(event)" class="deleteExp w-full items-center border-2 border-green-800 ">delete</button>
+              <button type="button" onClick="deleteexp(event)" class="deleteExp w-full items-center border-2 rounded-md border-orange-200 bg-black ">delete</button>
               
           </div>
 
