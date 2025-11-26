@@ -412,14 +412,17 @@ submitButton.addEventListener("click", (e) => {
   let phoneRegex = /^(?:\+212|0)(6|7)[0-9]{8}$/;
 
   if (!validation(username.value, nameRegex)) {
+    alert("please type the username")
     username.focus();
     return;
   }
   if (!validation(email.value, emailRegex)) {
+     alert("please type the  email")
     email.focus();
     return;
   }
   if (!validation(phone.value, phoneRegex)) {
+     alert("please type the  number")
     phone.focus();
     return;
   }
@@ -440,11 +443,13 @@ submitButton.addEventListener("click", (e) => {
     let endCheck = endDate.value;
 
     if (!companyRegex.test(company.value.trim())) {
+alert("please type the company")
       company.focus();
       return;
     }
     
     if (!jobRegex.test(job.value.trim())) {
+      alert("please type the job")
       job.focus();
       return;
     }
