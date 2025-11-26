@@ -620,15 +620,18 @@ function addToRoom(idWorker, room, limit) {
     let div = document.createElement("div");
     div.id = `worker-${worker.id}`;
     div.className =
-      "bg-white w-20 h-20 border-2 rounded-lg flex items-center";
+      "w-20 h-20 border-2 rounded-lg flex items-center bg-transparent border-none";
 
-    div.innerHTML = `
+    div.innerHTML = `<div class="flex">
+    
     <i
     class="remove-from-room fa-solid fa-xmark absolute top-3 h-5 right-4 hover:cursor-pointer hover:text-black"
     ></i>
-    <img class="border-2 rounded-full w-14 h-14 object-cover" src="${worker.image}">
+    <img style="width: 60%; height: 60%;" class="border-2 rounded-full object-cover" src="${worker.image}">
     
-    </div>`;
+    </div>
+    </div>
+    `;
     container.classList.remove("bg-red-500", "bg-opacity-20");
 
     div.addEventListener("click", () => {
@@ -719,3 +722,10 @@ function deleteexp(e) {
   e.target.parentElement.remove();
 }
 
+workers.forEach((e)=>{
+let serveurs=documen.getElementById("serveures")
+        if(e.status==="conference")
+        {e.status="serveurs"
+         serveurs.addToroom(e)
+        }
+})
