@@ -702,7 +702,7 @@ profile.innerHTML = `
         <p class="text-sm text-gray-600">${worker.role}</p>
 
       </div>
-      <div class="flex flex-col">
+      <div class="flex flex-col justify-center items-center text-black/80 font-smibold">
       
       <div>phone:${worker.phone}</div>
       <div>email:${worker.email}</div>
