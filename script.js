@@ -25,7 +25,7 @@ let workers = [
     id: 1,
     name: "Sarah Johnson",
     email: "sarah.johnson@example.com",
-    phone: "+212 645-112233",
+    phone: "0645112233",
     role: "Manager",
     image: "https://randomuser.me/api/portraits/women/12.jpg",
     experiences: [
@@ -38,7 +38,7 @@ let workers = [
     id: 2,
     name: "Michael Smith",
     email: "m.smith@example.com",
-    phone: "+212 612-334455",
+    phone: "0612334455",
     role: "IT Technician",
     image: "https://randomuser.me/api/portraits/men/43.jpg",
     experiences: [
@@ -50,7 +50,7 @@ let workers = [
     id: 3,
     name: "Emily Davis",
     email: "emily.davis@example.com",
-    phone: "+212 699-221144",
+    phone: "0699221144",
     role: "Receptionist",
     image: "https://randomuser.me/api/portraits/women/55.jpg",
     experiences: [
@@ -62,7 +62,7 @@ let workers = [
     id: 4,
     name: "Ahmed Benali",
     email: "ahmed.benali@example.com",
-    phone: "+212 661-778899",
+    phone: "0661778899",
     role: "Security Agent",
     image: "https://randomuser.me/api/portraits/men/2.jpg",
     experiences: [
@@ -74,7 +74,7 @@ let workers = [
     id: 5,
     name: "Jessica Lee",
     email: "jessica.lee@example.com",
-    phone: "+212 623-990011",
+    phone: "06230990011",
     role: "Cleaning Staff",
     image: "https://randomuser.me/api/portraits/women/30.jpg",
     experiences: [
@@ -86,7 +86,7 @@ let workers = [
     id: 6,
     name: "David Thompson",
     email: "david.thompson@example.com",
-    phone: "+212 650-550099",
+    phone: "0650550099",
     role: "Manager",
     image: "https://randomuser.me/api/portraits/men/51.jpg",
     experiences: [
@@ -99,7 +99,7 @@ let workers = [
     id: 7,
     name: "Nadia Amrani",
     email: "nadia.amrani@example.com",
-    phone: "+212 621-773344",
+    phone: "0621773344",
     role: "Receptionist",
     image: "https://randomuser.me/api/portraits/women/61.jpg",
     experiences: [
@@ -111,7 +111,7 @@ let workers = [
     id: 8,
     name: "Omar Rami",
     email: "omar.rami@example.com",
-    phone: "+212 677-889900",
+    phone: "0677889900",
     role: "IT Technician",
     image: "https://randomuser.me/api/portraits/men/27.jpg",
     experiences: [
@@ -124,7 +124,7 @@ let workers = [
     id: 9,
     name: "Linda Brooks",
     email: "linda.brooks@example.com",
-    phone: "+212 633-112255",
+    phone: "0633112255",
     role: "Cleaning Staff",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
     experiences: [
@@ -136,7 +136,7 @@ let workers = [
     id: 10,
     name: "John Carter",
     email: "john.carter@example.com",
-    phone: "+212 688-443322",
+    phone: "0688443322",
     role: "Security Agent",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
     experiences: [
@@ -148,7 +148,7 @@ let workers = [
     id: 11,
     name: "Amina El Idrissi",
     email: "amina.idrissi@example.com",
-    phone: "+212 601-932244",
+    phone: "0601932244",
     role: "Receptionist",
     image: "https://randomuser.me/api/portraits/women/15.jpg",
     experiences: [
@@ -160,7 +160,7 @@ let workers = [
     id: 12,
     name: "Zakaria Lafi",
     email: "zakaria.lafi@example.com",
-    phone: "+212 670-229988",
+    phone: "0670229988",
     role: "IT Technician",
     image: "https://randomuser.me/api/portraits/men/45.jpg",
     experiences: [
@@ -172,7 +172,7 @@ let workers = [
     id: 13,
     name: "Anna Martinez",
     email: "anna.martinez@example.com",
-    phone: "+212 699-122377",
+    phone: "0635886420",
     role: "Manager",
     image: "https://randomuser.me/api/portraits/women/8.jpg",
     experiences: [
@@ -184,7 +184,7 @@ let workers = [
     id: 14,
     name: "James Walker",
     email: "james.walker@example.com",
-    phone: "+212 620-988776",
+    phone: "0658097743",
     role: "Security Agent",
     image: "https://randomuser.me/api/portraits/men/12.jpg",
     experiences: [
@@ -196,7 +196,7 @@ let workers = [
     id: 15,
     name: "Karima Saidi",
     email: "karima.saidi@example.com",
-    phone: "+212 678-113355",
+    phone: "0624863071",
     role: "Cleaning Staff",
     image: "https://randomuser.me/api/portraits/women/52.jpg",
     experiences: [
@@ -208,7 +208,7 @@ let workers = [
     id: 16,
     name: "William Turner",
     email: "will.turner@example.com",
-    phone: "+212 665-556677",
+    phone: "0641823099",
     role: "IT Technician",
     image: "https://randomuser.me/api/portraits/men/39.jpg",
     experiences: [
@@ -220,7 +220,7 @@ let workers = [
     id: 17,
     name: "Chloé Laurent",
     email: "chloe.laurent@example.com",
-    phone: "+212 698-331177",
+    phone: "0655679123",
     role: "Receptionist",
     image: "https://randomuser.me/api/portraits/women/7.jpg",
     experiences: [
@@ -232,7 +232,7 @@ let workers = [
     id: 18,
     name: "Soufiane Fathi",
     email: "soufiane.fathi@example.com",
-    phone: "+212 622-709910",
+    phone: "0673408812",
     role: "Security Agent",
     image: "https://randomuser.me/api/portraits/men/19.jpg",
     experiences: [
@@ -244,7 +244,7 @@ let workers = [
     id: 19,
     name: "Maria Santos",
     email: "maria.santos@example.com",
-    phone: "+212 677-558899",
+    phone: "0612345670",
     role: "Manager",
     image: "https://randomuser.me/api/portraits/women/40.jpg",
     experiences: [
@@ -256,7 +256,7 @@ let workers = [
     id: 20,
     name: "Henry Lewis",
     email: "henry.lewis@example.com",
-    phone: "+212 661-200144",
+    phone: "0661200144",
     role: "Cleaning Staff",
     image: "https://randomuser.me/api/portraits/men/25.jpg",
     experiences: [
